@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ZurviveHandRing
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000000000000000000000000000000000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/forearm_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/forearm_R_003
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_01_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_01_R/finger_index_01_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_01_R/finger_index_01_R/finger_index_02_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_01_R/finger_index_01_R/finger_index_02_R/finger_index_03_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_01_R/thumb_01_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_01_R/thumb_01_R/thumb_02_R/thumb_03_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_02_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_02_R/finger_middle_01_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_02_R/finger_middle_01_R/finger_middle_02_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_02_R/finger_middle_01_R/finger_middle_02_R/finger_middle_03_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_03_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_03_R/finger_ring_01_R
+    m_Weight: 1
+  - m_Path: Armature/forearm_R/hand_R/palm_03_R/finger_ring_01_R/finger_ring_02_R
+    m_Weight: 1
+  - m_Path: Armature/forearm_R/hand_R/palm_03_R/finger_ring_01_R/finger_ring_02_R/finger_ring_03_R
+    m_Weight: 1
+  - m_Path: Armature/forearm_R/hand_R/palm_04_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_04_R/finger_pinky_01_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_04_R/finger_pinky_01_R/finger_pinky_02_R
+    m_Weight: 0
+  - m_Path: Armature/forearm_R/hand_R/palm_04_R/finger_pinky_01_R/finger_pinky_02_R/finger_pinky_03_R
+    m_Weight: 0
+  - m_Path: Cube_000
+    m_Weight: 0
