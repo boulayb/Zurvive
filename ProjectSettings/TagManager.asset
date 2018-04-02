@@ -16,6 +16,7 @@ TagManager:
   - SnapCylinder
   - SnapSaucer
   - Head
+  - Weapons
   layers:
   - Default
   - TransparentFX
@@ -25,8 +26,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Items
   - 
   - 
   - 
