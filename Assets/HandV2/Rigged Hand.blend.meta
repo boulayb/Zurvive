@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: e5919f54f086b0f44a2233c6fd6be071
-timeCreated: 1521818535
+guid: 5e7b0967d9c1ad243a0f5e266bc83dac
+timeCreated: 1522674760
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Armature
     100002: Cube_000
@@ -20,16 +20,14 @@ ModelImporter:
     100024: finger_ring_02_R
     100026: finger_ring_03_R
     100028: forearm_R
-    100030: forearm_R_003
-    100032: hand_R
-    100034: palm_01_R
-    100036: palm_02_R
-    100038: palm_03_R
-    100040: palm_04_R
-    100042: //RootNode
-    100044: thumb_01_R
-    100046: thumb_02_R
-    100048: thumb_03_R
+    100030: palm_01_R
+    100032: palm_02_R
+    100034: palm_03_R
+    100036: palm_04_R
+    100038: //RootNode
+    100040: thumb_01_R
+    100042: thumb_02_R
+    100044: thumb_03_R
     400000: Armature
     400002: Cube_000
     400004: finger_index_01_R
@@ -45,16 +43,15 @@ ModelImporter:
     400024: finger_ring_02_R
     400026: finger_ring_03_R
     400028: forearm_R
-    400030: forearm_R_003
-    400032: hand_R
-    400034: palm_01_R
-    400036: palm_02_R
-    400038: palm_03_R
-    400040: palm_04_R
-    400042: //RootNode
-    400044: thumb_01_R
-    400046: thumb_02_R
-    400048: thumb_03_R
+    400030: palm_01_R
+    400032: palm_02_R
+    400034: palm_03_R
+    400036: palm_04_R
+    400038: //RootNode
+    400040: thumb_01_R
+    400042: thumb_02_R
+    400044: thumb_03_R
+    2100000: Material_004__HAND_Low_N_png
     4300000: Cube_000
     7400000: Default Take
     7400002: 00
@@ -63,10 +60,17 @@ ModelImporter:
     7400008: Zurvive_Hand_Close
     9500000: //RootNode
     13700000: Cube_000
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_004__HAND_Low_N_png
+    second: {fileID: 2100000, guid: d6bbe5ca5a3a2c342b2428d6fce5c835, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -79,6 +83,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -243,6 +248,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
