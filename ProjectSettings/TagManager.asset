@@ -17,6 +17,7 @@ TagManager:
   - SnapSaucer
   - Head
   - Weapons
+  - Enemy
   layers:
   - Default
   - TransparentFX
