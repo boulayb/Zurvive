@@ -18,6 +18,8 @@ TagManager:
   - Head
   - Weapons
   - Enemy
+  - CameraRig
+  - TeleportIgnore
   layers:
   - Default
   - TransparentFX
@@ -28,8 +30,8 @@ TagManager:
   - 
   - 
   - Player
-  - Items
-  - 
+  - Item
+  - Dead
   - 
   - 
   - 

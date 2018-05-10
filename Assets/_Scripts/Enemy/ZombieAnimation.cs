@@ -9,6 +9,7 @@ public class ZombieAnimation : MonoBehaviour
 
     private GameObject player;
     private ZombieAttack zombieAttack;
+    private ZombieAI zombieAI;
     private NavMeshAgent nav;
     private Animator anim;
     private HashID hash;
@@ -19,6 +20,7 @@ public class ZombieAnimation : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         zombieAttack = GetComponent<ZombieAttack>();
+        zombieAI = GetComponent<ZombieAI>();
         hash = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<HashID>();
 
         nav.updateRotation = true;
@@ -43,7 +45,8 @@ public class ZombieAnimation : MonoBehaviour
 
     private void Update()
     {
-        NavAnimSetup();
+        if (zombieAI.isDead == false)
+            NavAnimSetup();
     }
 
     private void OnAnimatorMove()

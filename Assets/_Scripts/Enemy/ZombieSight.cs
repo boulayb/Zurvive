@@ -44,12 +44,13 @@ public class ZombieSight : MonoBehaviour
 
     private void Update()
     {
-        anim.SetBool(hash.playerInSightBool, playerInSight);
+        if (zombieAI.isDead == false)
+            anim.SetBool(hash.playerInSightBool, playerInSight);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (zombieAI.colID >= 1 && other.gameObject == player)
+        if (zombieAI.colID >= 1 && zombieAI.isDead == false && other.gameObject == player)
         {
             playerInSight = false;
 
@@ -76,7 +77,7 @@ public class ZombieSight : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (zombieAI.colID >= 1 && other.gameObject == player)
+        if (zombieAI.colID >= 1 && zombieAI.isDead == false && other.gameObject == player)
             playerInSight = false;
     }
 

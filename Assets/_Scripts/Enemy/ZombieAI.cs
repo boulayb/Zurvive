@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class ZombieAI : MonoBehaviour
 {
     public int colID;
+    public bool isDead = false;
     public float patrolSpeed = 2f;
     public float chaseSpeed = 3f;
     public float chaseWaitTime = 5f;
@@ -40,16 +41,24 @@ public class ZombieAI : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
 
         player = GameObject.FindGameObjectWithTag(Tags.player);
+
+        GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
+
+        if (isDead == true)
+            GetComponentInChildren<ZombieDeath>().Die();
     }
 
     private void Update()
     {
-        if (zombieAttack.playerInRange)
-            Attacking();
-        else if (zombieSight.personalLastSighting != zombieSight.resetPosition)
-            Chassing();
-        else
-            Patrolling();
+        if (isDead == false)
+        {
+            if (zombieAttack.playerInRange)
+                Attacking();
+            else if (zombieSight.personalLastSighting != zombieSight.resetPosition)
+                Chassing();
+            else
+                Patrolling();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ZombieAttack : MonoBehaviour
 {
@@ -34,23 +35,26 @@ public class ZombieAttack : MonoBehaviour
 
     private void Update()
     {
-        anim.SetBool(hash.playerInRangeBool, playerInRange);
-        float attack = anim.GetFloat(hash.attackFloat);
-
-        if (attack > 0.7 && playerInRange)
+        if (zombieAI.isDead == false)
         {
-            // set game over
+            anim.SetBool(hash.playerInRangeBool, playerInRange);
+            float attack = anim.GetFloat(hash.attackFloat);
+
+            if (attack > 0.4 && playerInRange)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (zombieAI.colID == 2 && other.gameObject == player)
+        if (zombieAI.colID == 2 && zombieAI.isDead == false && other.gameObject == player)
             playerInRange = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (zombieAI.colID == 2 && other.gameObject == player)
+        if (zombieAI.colID == 2 && zombieAI.isDead == false && other.gameObject == player)
             playerInRange = false;
     }
 }
