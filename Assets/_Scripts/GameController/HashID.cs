@@ -9,6 +9,7 @@ public class HashID : MonoBehaviour
     public int AngularSpeedFloat;
     public int playerInSightBool;
     public int playerInRangeBool;
+    public int zombieIsHit;
     public int locomotionState;
 
     private void Awake()
@@ -18,6 +19,7 @@ public class HashID : MonoBehaviour
         AngularSpeedFloat = Animator.StringToHash("AngularSpeed");
         playerInSightBool = Animator.StringToHash("PlayerInSight");
         playerInRangeBool = Animator.StringToHash("PlayerInRange");
+        zombieIsHit = Animator.StringToHash("ZombieIsHit");
         locomotionState = Animator.StringToHash("Base Layer.Locomotion");
     }
 }

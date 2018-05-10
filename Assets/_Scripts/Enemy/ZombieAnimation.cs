@@ -26,7 +26,8 @@ public class ZombieAnimation : MonoBehaviour
         nav.updateRotation = true;
         animSetup = new AnimatorSetup(anim, hash);
 
-        anim.SetLayerWeight(1, 1f);
+        anim.SetLayerWeight(1, 0.50f);
+        anim.SetLayerWeight(2, 1f);
 
         deadZone *= Mathf.Deg2Rad;
     }

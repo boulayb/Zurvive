@@ -6,12 +6,16 @@ using UnityEngine.AI;
 public class ZombieDeath : MonoBehaviour
 {
     public float forceToKill = 850f;
+    public float forceToPush = 150f;
     public GameObject parentZombie;
-    public ZombieAI zombieAI;
+
+    private ZombieAI zombieAI;
+    private ZombieHit zombieHit;
 
     private void Awake()
     {
         zombieAI = parentZombie.GetComponent<ZombieAI>();
+        zombieHit = parentZombie.GetComponent<ZombieHit>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -19,10 +23,14 @@ public class ZombieDeath : MonoBehaviour
         if (zombieAI.isDead == false)
         {
             if (collision.gameObject.tag == Tags.weapons &&
-                collision.contacts[0].thisCollider.tag == Tags.head &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToKill)
             {
                 Die();
+            }
+            else if (collision.gameObject.tag == Tags.weapons &&
+                collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToPush)
+            {
+                zombieHit.zombieIsHit = true;
             }
         }
     }
