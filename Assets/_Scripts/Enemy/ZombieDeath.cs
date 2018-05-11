@@ -20,7 +20,7 @@ public class ZombieDeath : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (zombieAI.isDead == false)
+        if (zombieAI)
         {
             if (collision.gameObject.tag == Tags.weapons &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToKill)
@@ -37,7 +37,6 @@ public class ZombieDeath : MonoBehaviour
 
     private void SetKinematic(bool newValue)
     {
-        Destroy(parentZombie.GetComponent<Rigidbody>());
         Rigidbody[] bodies = parentZombie.GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in bodies)
         {
@@ -58,9 +57,17 @@ public class ZombieDeath : MonoBehaviour
     public void Die()
     {
         zombieAI.isDead = true;
+        Destroy(parentZombie.GetComponent<Rigidbody>());
+        Destroy(parentZombie.GetComponent<Animator>());
+        Destroy(parentZombie.GetComponent<NavMeshAgent>());
+        Destroy(parentZombie.GetComponent<SphereCollider>());
+        Destroy(parentZombie.GetComponent<CapsuleCollider>());
+        Destroy(parentZombie.GetComponent<ZombieAI>());
+        Destroy(parentZombie.GetComponent<ZombieAnimation>());
+        Destroy(parentZombie.GetComponent<ZombieAttack>());
+        Destroy(parentZombie.GetComponent<ZombieHit>());
+        Destroy(parentZombie.GetComponent<ZombieSight>());
         SetKinematic(false);
-        parentZombie.GetComponent<Animator>().enabled = false;
-        parentZombie.GetComponent<NavMeshAgent>().enabled = false;
         SetLayer("Dead");
     }
 }

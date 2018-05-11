@@ -21,7 +21,7 @@ public class ZombieHit : MonoBehaviour
 
     private void Update()
     {
-        if (zombieAI.isDead == false)
+        if (zombieAI)
         {
             anim.SetBool(hash.zombieIsHit, zombieIsHit);
             if (anim.GetCurrentAnimatorStateInfo(2).IsName("Zombie Reaction Hit"))

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4474055181252174}
   - component: {fileID: 137009845260376104}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ' L Pelvis'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 65141376936447740}
   - component: {fileID: 54964885304459516}
   - component: {fileID: 144473148065153128}
-  m_Layer: 0
+  - component: {fileID: 114965045826595424}
+  m_Layer: 11
   m_Name: Bip01 R UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +57,8 @@ GameObject:
   - component: {fileID: 65029390843601292}
   - component: {fileID: 54792760868881656}
   - component: {fileID: 144656537072517274}
-  m_Layer: 0
+  - component: {fileID: 114968580980078276}
+  m_Layer: 11
   m_Name: Bip01 R Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +73,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4837504834335540}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4539403157043604}
   - component: {fileID: 65756933051532568}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4049270730264166}
   - component: {fileID: 137889454648870934}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +123,8 @@ GameObject:
   - component: {fileID: 65139796020834084}
   - component: {fileID: 54222153148705536}
   - component: {fileID: 144695997892312154}
-  m_Layer: 0
+  - component: {fileID: 114276932501859688}
+  m_Layer: 11
   m_Name: Bip01 Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +142,8 @@ GameObject:
   - component: {fileID: 65579703832631358}
   - component: {fileID: 54236124473232396}
   - component: {fileID: 144377324299816234}
-  m_Layer: 0
+  - component: {fileID: 114845817440723510}
+  m_Layer: 11
   m_Name: Bip01 L Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4385352542529804}
   - component: {fileID: 137876842867950478}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +175,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4011756051953360}
   - component: {fileID: 65344145352897104}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 R Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +193,8 @@ GameObject:
   - component: {fileID: 65405363023267298}
   - component: {fileID: 54906355952113974}
   - component: {fileID: 144286662220901228}
-  m_Layer: 0
+  - component: {fileID: 114088810099305224}
+  m_Layer: 11
   m_Name: Bip01 L Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4806198449611844}
   - component: {fileID: 137456265698535742}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +234,8 @@ GameObject:
   - component: {fileID: 114907105896539716}
   - component: {fileID: 114716465077592358}
   - component: {fileID: 114146612546538232}
-  m_Layer: 0
+  - component: {fileID: 114842615567378780}
+  m_Layer: 11
   m_Name: ZurviveZombie
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -245,7 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4260235458601856}
   - component: {fileID: 137090950734486550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ' L Thigh'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4081549624363222}
   - component: {fileID: 137936118479701068}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +282,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4226335181518576}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +298,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687486983894152}
   - component: {fileID: 65116358467791630}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 R Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4805775850061574}
   - component: {fileID: 137443510268620104}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ' Head'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4929508693864730}
   - component: {fileID: 137894919147645954}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ' L Forearm'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4798379659072560}
   - component: {fileID: 137581729851177694}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ' R Pelvis'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -356,7 +362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943550143881846}
   - component: {fileID: 137017460550699530}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +380,8 @@ GameObject:
   - component: {fileID: 65032331031619998}
   - component: {fileID: 54381759025227958}
   - component: {fileID: 144930870147158582}
-  m_Layer: 0
+  - component: {fileID: 114659035979415020}
+  m_Layer: 11
   m_Name: Bip01 L UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4078092344161322}
   - component: {fileID: 137425428431596908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +412,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4653299500879074}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 L Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +427,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4967669832045488}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bone01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,7 +442,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4974673205547638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 L Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -451,7 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4437687996585334}
   - component: {fileID: 137126838481031540}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4334796920294334}
   - component: {fileID: 137242131605774752}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ' R Thigh'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,7 +490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4236362813490294}
   - component: {fileID: 137022628681744168}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -498,7 +505,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4947829693615490}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 R Toe0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +523,8 @@ GameObject:
   - component: {fileID: 65285754264059464}
   - component: {fileID: 54817852109542708}
   - component: {fileID: 144311332392317438}
-  m_Layer: 0
+  - component: {fileID: 114213472301701784}
+  m_Layer: 11
   m_Name: Bip01 R Thigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +542,8 @@ GameObject:
   - component: {fileID: 65507671823020682}
   - component: {fileID: 54037681403791424}
   - component: {fileID: 144123072667284094}
-  m_Layer: 0
+  - component: {fileID: 114129008268246644}
+  m_Layer: 11
   m_Name: Bip01 L Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +558,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4596034522078142}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 R Clavicle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -565,7 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4477073044601418}
   - component: {fileID: 137997561058681058}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L UpperArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -581,7 +590,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4983582436984366}
   - component: {fileID: 137318531473861556}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +608,8 @@ GameObject:
   - component: {fileID: 65234220634259494}
   - component: {fileID: 54482547856213062}
   - component: {fileID: 144592925109657944}
-  m_Layer: 0
+  - component: {fileID: 114641510056888548}
+  m_Layer: 11
   m_Name: Bip01 R Forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +625,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4258570449318796}
   - component: {fileID: 65055131423424536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 L Foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -631,7 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4058362895383456}
   - component: {fileID: 137836817109503346}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L Calf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +660,7 @@ GameObject:
   - component: {fileID: 54031743977276780}
   - component: {fileID: 144175425705475882}
   - component: {fileID: 114589605866538234}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 Head
   m_TagString: Head
   m_Icon: {fileID: 0}
@@ -666,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4343325046280342}
   - component: {fileID: 65375721339958234}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bip01 L Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +693,8 @@ GameObject:
   - component: {fileID: 4858223410471742}
   - component: {fileID: 65619735965022224}
   - component: {fileID: 54858068323947278}
-  m_Layer: 0
+  - component: {fileID: 114827157554503890}
+  m_Layer: 11
   m_Name: Bip01 Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1214,7 +1225,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1275271943060122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 16.67}
+  m_LocalPosition: {x: 0, y: 0, z: 14.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4805775850061574}
@@ -1275,7 +1286,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1290,7 +1301,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1305,7 +1316,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1320,7 +1331,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1335,7 +1346,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1365,7 +1376,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1380,7 +1391,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1395,7 +1406,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1406,11 +1417,11 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997377153397786}
   serializedVersion: 2
-  m_Mass: 3.125
+  m_Mass: 30.125
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1425,7 +1436,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1440,7 +1451,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1653,6 +1664,32 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114088810099305224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222642850237372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
+--- !u!114 &114129008268246644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804794661593732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
 --- !u!114 &114146612546538232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1666,8 +1703,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colID: 0
   isDead: 0
-  patrolSpeed: 2
-  chaseSpeed: 3
+  patrolSpeed: 1
+  chaseSpeed: 5
   chaseWaitTime: 5
   patrolWaitTime: 1
   patrolWayPoints:
@@ -1675,6 +1712,32 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114213472301701784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1719896202254768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
+--- !u!114 &114276932501859688
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175615125015844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
 --- !u!114 &114589605866538234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1687,8 +1750,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceToKill: 850
+  forceToPush: 150
   parentZombie: {fileID: 1275271943060122}
-  zombieAI: {fileID: 0}
+--- !u!114 &114641510056888548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1881333979982450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
+--- !u!114 &114659035979415020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480807340117862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
 --- !u!114 &114716465077592358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1717,6 +1806,44 @@ MonoBehaviour:
   playerInSight: 0
   personalLastSighting: {x: 0, y: 0, z: 0}
   resetPosition: {x: 5000, y: 5000, z: 5000}
+--- !u!114 &114827157554503890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997377153397786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
+--- !u!114 &114842615567378780
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275271943060122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 909c94ebb916fc946aa93a7bb4826199, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieIsHit: 0
+--- !u!114 &114845817440723510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1187974411244876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
 --- !u!114 &114907105896539716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1729,6 +1856,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadZone: 5
+--- !u!114 &114965045826595424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008757268174100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
+--- !u!114 &114968580980078276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1014387586104242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3d34bd81921344d97248dee0b4527e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forceToPush: 150
+  parentZombie: {fileID: 1275271943060122}
 --- !u!135 &135831915572350982
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1751,9 +1904,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.7345731
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0.3}
+  m_Center: {x: 0, y: 1.0012926, z: 0.3}
 --- !u!137 &137009845260376104
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2745,7 +2898,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.4005843, y: 0.00000044086477, z: 0.000000022351742}
+  m_ConnectedAnchor: {x: -0.40058428, y: -0.00000050826924, z: 0.000000022351742}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2877,7 +3030,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.22114584, y: 0.00002461896, z: -0.17713532}
+  m_ConnectedAnchor: {x: -0.22114576, y: 0.000025567133, z: -0.17713532}
   serializedVersion: 2
   m_SwingAxis: {x: -1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -2921,7 +3074,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.31570116, y: 0.0000005923212, z: -0.00000027194622}
+  m_ConnectedAnchor: {x: -0.3157011, y: -0.00000030919912, z: 0.00000005215407}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:

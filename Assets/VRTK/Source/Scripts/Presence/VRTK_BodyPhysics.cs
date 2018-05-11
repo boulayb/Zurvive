@@ -965,7 +965,7 @@ namespace VRTK
                 Vector3 castExtents = new Vector3(bodyCollider.radius, boxCastHeight, bodyCollider.radius);
                 float castDistance = castStart.y - playArea.position.y;
                 RaycastHit floorCheckHit;
-                bool floorHit = VRTK_CustomRaycast.BoxCast(customRaycast, castStart, castExtents, Vector3.down, Quaternion.identity, castDistance, out floorCheckHit, defaultIgnoreLayer, QueryTriggerInteraction.Ignore);
+                bool floorHit = VRTK_CustomRaycast.BoxCast(customRaycast, castStart, castExtents, Vector3.down, Quaternion.identity, castDistance, out floorCheckHit, ~customRaycast.layersToIgnore, QueryTriggerInteraction.Ignore);
                 if (floorHit && (floorCheckHit.point.y - playArea.position.y) > stepDropThreshold)
                 {
                     //If there is a teleporter attached then use that to move

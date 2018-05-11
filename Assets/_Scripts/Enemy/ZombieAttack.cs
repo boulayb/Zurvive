@@ -35,26 +35,23 @@ public class ZombieAttack : MonoBehaviour
 
     private void Update()
     {
-        if (zombieAI.isDead == false)
-        {
-            anim.SetBool(hash.playerInRangeBool, playerInRange);
-            float attack = anim.GetFloat(hash.attackFloat);
+        anim.SetBool(hash.playerInRangeBool, playerInRange);
+        float attack = anim.GetFloat(hash.attackFloat);
 
-            if (attack > 0.4 && playerInRange)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+        if (attack > 0.4 && playerInRange)
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (zombieAI.colID == 2 && zombieAI.isDead == false && other.gameObject == player)
+        if (zombieAI.colID == 2 && other.gameObject == player)
             playerInRange = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (zombieAI.colID == 2 && zombieAI.isDead == false && other.gameObject == player)
+        if (zombieAI.colID == 2 && other.gameObject == player)
             playerInRange = false;
     }
 }
