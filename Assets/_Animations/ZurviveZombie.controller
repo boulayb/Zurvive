@@ -104,10 +104,66 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: AngularSpeed
     m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 1841345679846ab4ca891e9be0b3174c, type: 3}
+    m_Threshold: 2
+    m_Position: {x: 0, y: 2.867242}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AngularSpeed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 413cb3b22e96c6a4a831ad8091522958, type: 3}
+    m_Threshold: 3
+    m_Position: {x: -0.6476921, y: 0.06255354}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AngularSpeed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 3a69d20bc1f6aaa489c02464645c490a, type: 3}
+    m_Threshold: 4
+    m_Position: {x: 0.6476921, y: 0.06255354}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AngularSpeed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 60c04168e8bfc2c4cb93ef469d3f7da7, type: 3}
+    m_Threshold: 5
+    m_Position: {x: -0.17462042, y: 0.03696882}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AngularSpeed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 40028361a66dbbb4391aa0a6fb91f91c, type: 3}
+    m_Threshold: 6
+    m_Position: {x: 0.17462042, y: 0.03696882}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AngularSpeed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 903a1d989d32db043afb3eb7542eeeb9, type: 3}
+    m_Threshold: 7
+    m_Position: {x: -1.0388448, y: 6.2930036}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AngularSpeed
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: e2ccaf532b2bb304080d90d23257b40a, type: 3}
+    m_Threshold: 8
+    m_Position: {x: 1.0388448, y: 6.2930036}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: AngularSpeed
+    m_Mirror: 0
   m_BlendParameter: AngularSpeed
   m_BlendParameterY: Speed
   m_MinThreshold: 0
-  m_MaxThreshold: 1
+  m_MaxThreshold: 8
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
   m_BlendType: 3
