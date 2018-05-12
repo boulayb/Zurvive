@@ -40,7 +40,7 @@ public class ZombieAttack : MonoBehaviour
 
         if (attack > 0.4 && playerInRange)
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
     private void OnTriggerStay(Collider other)
