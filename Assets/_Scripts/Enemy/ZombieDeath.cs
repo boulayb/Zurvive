@@ -11,11 +11,13 @@ public class ZombieDeath : MonoBehaviour
 
     private ZombieAI zombieAI;
     private ZombieHit zombieHit;
+    private EnergyManager energyManager;
 
     private void Awake()
     {
         zombieAI = parentZombie.GetComponent<ZombieAI>();
         zombieHit = parentZombie.GetComponent<ZombieHit>();
+        energyManager = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<EnergyManager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -25,6 +27,7 @@ public class ZombieDeath : MonoBehaviour
             if (collision.gameObject.tag == Tags.weapons &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToKill)
             {
+                energyManager.LooseEnergy(EnergyManager.EnergyEventName.KILLING);
                 Die();
             }
             else if (collision.gameObject.tag == Tags.weapons &&

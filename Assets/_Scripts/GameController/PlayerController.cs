@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         speed = Vector3.Distance(lastPosition, transform.position) / Time.deltaTime;
+        Debug.Log(speed);
         lastPosition = transform.position;
     }
 
