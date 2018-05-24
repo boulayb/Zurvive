@@ -7,11 +7,9 @@ public class ZombieAnimation : MonoBehaviour
 {
     public float deadZone = 5f;
 
-    private GameObject player;
     private ZombieAttack zombieAttack;
     private NavMeshAgent nav;
     private Animator anim;
-    private HashID hash;
     private AnimatorSetup animSetup;
 
     private void Awake()
@@ -19,27 +17,14 @@ public class ZombieAnimation : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         zombieAttack = GetComponent<ZombieAttack>();
-        hash = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<HashID>();
 
         nav.updateRotation = true;
-        animSetup = new AnimatorSetup(anim, hash);
+        animSetup = new AnimatorSetup(anim);
 
         anim.SetLayerWeight(1, 1f);
         anim.SetLayerWeight(2, 1f);
 
         deadZone *= Mathf.Deg2Rad;
-    }
-
-    private void Start()
-    {
-        StartCoroutine(LateStart(3));
-    }
-
-    private IEnumerator LateStart(float waitTime) // LATE INIT BECAUSE OF VRTK TAKING TIME TO LOAD
-    {
-        yield return new WaitForSeconds(waitTime);
-
-        player = GameObject.FindGameObjectWithTag(Tags.player);
     }
 
     private void Update()
@@ -49,7 +34,8 @@ public class ZombieAnimation : MonoBehaviour
 
     private void OnAnimatorMove()
     {
-        nav.velocity = anim.deltaPosition / Time.deltaTime;
+        if (Time.deltaTime != 0)
+            nav.velocity = anim.deltaPosition / Time.deltaTime;
         transform.rotation = anim.rootRotation;
     }
 
@@ -61,7 +47,7 @@ public class ZombieAnimation : MonoBehaviour
         if (zombieAttack.playerInRange)
         {
             speed = 0f;
-            angle = FindAngle(transform.forward, player.transform.position - transform.position, transform.up);
+            angle = FindAngle(transform.forward, PlayerController.instance.gameObject.transform.position - transform.position, transform.up);
         }
         else
         {

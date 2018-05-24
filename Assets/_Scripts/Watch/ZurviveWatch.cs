@@ -6,18 +6,16 @@ public class ZurviveWatch : MonoBehaviour
 {
     public Transform Minutes;
 
-    private ZurviveTimer timer;
     private float totalTime;
 
-    private void Awake()
+    private void Start()
     {
-        timer = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<ZurviveTimer>();
-        totalTime = timer.timeLeft;
+        totalTime = ZurviveTimer.instance.timeLeft;
     }
 
     void Update()
     {
-        float minute = timer.timeLeft;
+        float minute = ZurviveTimer.instance.timeLeft;
 
         if (Minutes)
             Minutes.localRotation = Quaternion.Euler(0, 0, (minute / totalTime * 360) * -1);

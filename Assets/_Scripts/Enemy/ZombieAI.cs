@@ -16,7 +16,6 @@ public class ZombieAI : MonoBehaviour
     private ZombieSight zombieSight;
     private ZombieAttack zombieAttack;
     private NavMeshAgent nav;
-    private GameObject player;
     private float chaseTimer;
     private float patrolTimer;
     private int wayPointIndex;
@@ -33,15 +32,6 @@ public class ZombieAI : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(LateStart(3));
-    }
-
-    private IEnumerator LateStart(float waitTime) // LATE INIT BECAUSE OF VRTK TAKING TIME TO LOAD
-    {
-        yield return new WaitForSeconds(waitTime);
-
-        player = GameObject.FindGameObjectWithTag(Tags.player);
-
         GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
 
         if (isDead == true)
@@ -60,13 +50,13 @@ public class ZombieAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (PlayerController.instance != null && other.gameObject == PlayerController.instance.gameObject)
             colID++;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject == player)
+        if (PlayerController.instance != null && other.gameObject == PlayerController.instance.gameObject)
             colID--;
     }
 
@@ -95,22 +85,17 @@ public class ZombieAI : MonoBehaviour
 
     private void Chassing()
     {
-        //if (nav.updatePosition == false)
-            //SetRotationOnly(false);
-
         nav.speed = chaseSpeed;
 
         Vector3 sightingDeltaPos = zombieSight.personalLastSighting - transform.position;
 
-        if (sightingDeltaPos.sqrMagnitude > 0.2f) // MIGHT HAVE TO LOWER THAT 4F FOR ZOMBIE TO COME CLOSER
+        if (sightingDeltaPos.sqrMagnitude > 0.2f)
         {
             if (zombieSight.playerInSight == false)
             {
-                //SetRotationOnly(true);
                 patrolTimer += Time.deltaTime;
                 if (patrolTimer >= patrolWaitTime)
                 {
-                    //SetRotationOnly(false);
                     patrolTimer = 0f;
                 }
             }
@@ -134,9 +119,6 @@ public class ZombieAI : MonoBehaviour
 
     private void Patrolling()
     {
-        //if (nav.updatePosition == false)
-            ///SetRotationOnly(false);
-
         nav.speed = patrolSpeed;
 
         if (nav.destination == zombieSight.resetPosition || nav.remainingDistance < nav.stoppingDistance)

@@ -955,7 +955,7 @@ namespace VRTK
 
         protected virtual void CheckStepUpCollision(Collision collision)
         {
-            if (bodyCollider != null && footCollider != null && collision.contacts.Length > 0 && collision.contacts[0].thisCollider.transform.name == footColliderContainerNameCheck)
+            if (bodyCollider != null && footCollider != null && customRaycast != null && collision.contacts.Length > 0 && collision.contacts[0].thisCollider.transform.name == footColliderContainerNameCheck)
             {
                 float stepYIncrement = 0.55f;
                 float boxCastHeight = 0.01f;

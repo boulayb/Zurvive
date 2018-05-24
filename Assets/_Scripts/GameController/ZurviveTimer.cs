@@ -5,7 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class ZurviveTimer : MonoBehaviour
 {
+    public static ZurviveTimer instance = null;
+
     public float timeLeft = 120.0f;
+
+    public void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+    }
 
     public void Update()
     {

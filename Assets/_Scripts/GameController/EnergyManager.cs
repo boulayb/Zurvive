@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnergyManager : MonoBehaviour
 {
+    public static EnergyManager instance = null;
+
     public int MaxEnergy = 1000;
     public float sprintingThreshold = 8.0f;
     public float runningThreshold = 4.5f;
@@ -22,27 +24,23 @@ public class EnergyManager : MonoBehaviour
 
     private bool waiting = false;
     private int energy;
-    private PlayerController playerController;
 
-    private void Start()
+    private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
         energy = MaxEnergy;
-        StartCoroutine(LateStart(3));
-    }
-
-    private IEnumerator LateStart(float waitTime) // LATE INIT BECAUSE OF VRTK TAKING TIME TO LOAD
-    {
-        yield return new WaitForSeconds(waitTime);
-
-        playerController = GameObject.FindGameObjectWithTag(Tags.player).GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        if (!waiting)
+        if (!waiting && PlayerController.instance != null)
         {
             waiting = true;
-            float speed = playerController.getSpeed();
+            float speed = PlayerController.instance.getSpeed();
             if (speed > sprintingThreshold)
                 energy -= energyLostSprinting;
             else if (speed > runningThreshold)

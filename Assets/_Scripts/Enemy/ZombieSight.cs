@@ -14,8 +14,6 @@ public class ZombieSight : MonoBehaviour
     private NavMeshAgent nav;
     private SphereCollider col;
     private Animator anim;
-    private GameObject player;
-    private HashID hash;
     private ZombieAI zombieAI;
 
     private void Awake()
@@ -24,32 +22,19 @@ public class ZombieSight : MonoBehaviour
         col = GetComponent<SphereCollider>();
         anim = GetComponent<Animator>();
         zombieAI = GetComponent<ZombieAI>();
-        hash = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<HashID>();
 
         playerInSight = false;
         personalLastSighting = resetPosition;
     }
 
-    private void Start()
-    {
-        StartCoroutine(LateStart(3));
-    }
-
-    private IEnumerator LateStart(float waitTime) // LATE INIT BECAUSE OF VRTK TAKING TIME TO LOAD
-    {
-        yield return new WaitForSeconds(waitTime);
-
-        player = GameObject.FindGameObjectWithTag(Tags.player);
-    }
-
     private void Update()
     {
-        anim.SetBool(hash.playerInSightBool, playerInSight);
+        anim.SetBool(HashID.instance.playerInSightBool, playerInSight);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (zombieAI.colID >= 1 && other.gameObject == player)
+        if (zombieAI.colID >= 1 && other.gameObject == PlayerController.instance.gameObject)
         {
             playerInSight = false;
 
@@ -61,22 +46,22 @@ public class ZombieSight : MonoBehaviour
                 RaycastHit hit;
 
                 if (Physics.Raycast(transform.position + transform.up, direction.normalized, out hit, col.radius))
-                    if (hit.collider.gameObject == player)
+                    if (hit.collider.gameObject == PlayerController.instance.gameObject)
                     {
                         playerInSight = true;
-                        personalLastSighting = player.transform.position;
+                        personalLastSighting = PlayerController.instance.gameObject.transform.position;
                     }
             }
 
-            if (playerInSight == false && player.GetComponent<PlayerController>().getSpeed() > maxSpeedNoise)
-                if (CalculatePathLength(player.transform.position) <= col.radius)
-                    personalLastSighting = player.transform.position;
+            if (playerInSight == false && PlayerController.instance.getSpeed() > maxSpeedNoise)
+                if (CalculatePathLength(PlayerController.instance.gameObject.transform.position) <= col.radius)
+                    personalLastSighting = PlayerController.instance.gameObject.transform.position;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (zombieAI.colID >= 1 && other.gameObject == player)
+        if (zombieAI.colID >= 1 && other.gameObject == PlayerController.instance.gameObject)
             playerInSight = false;
     }
 

@@ -9,20 +9,18 @@ public class AnimatorSetup
     public float angleResponseTime = 0.6f;
 
     private Animator anim;
-    private HashID hash;
 
-    public AnimatorSetup(Animator animator, HashID hashIDs)
+    public AnimatorSetup(Animator animator)
     {
         anim = animator;
-        hash = hashIDs;
     }
 
     public void Setup(float speed, float angle)
     {
         float angularSpeed = angle / angleResponseTime;
 
-        anim.SetFloat(hash.speedFloat, speed, speedDampTime, Time.deltaTime);
-        anim.SetFloat(hash.AngularSpeedFloat, angularSpeed, angularSpeedDampTime, Time.deltaTime);
+        anim.SetFloat(HashID.instance.speedFloat, speed, speedDampTime, Time.deltaTime);
+        anim.SetFloat(HashID.instance.AngularSpeedFloat, angularSpeed, angularSpeedDampTime, Time.deltaTime);
     }
 }
 

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HashID : MonoBehaviour
 {
+    public static HashID instance = null;
+
     public int speedFloat;
     public int attackFloat;
     public int AngularSpeedFloat;
@@ -14,6 +16,11 @@ public class HashID : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+
         speedFloat = Animator.StringToHash("Speed");
         attackFloat = Animator.StringToHash("Attack");
         AngularSpeedFloat = Animator.StringToHash("AngularSpeed");

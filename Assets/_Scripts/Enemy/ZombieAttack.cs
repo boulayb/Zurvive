@@ -8,35 +8,20 @@ public class ZombieAttack : MonoBehaviour
     public bool playerInRange;
 
     private Animator anim;
-    private HashID hash;
-    private GameObject player;
     private ZombieAI zombieAI;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         zombieAI = GetComponent<ZombieAI>();
-        hash = GameObject.FindGameObjectWithTag(Tags.gameController).GetComponent<HashID>();
 
         playerInRange = false;
     }
 
-    private void Start()
-    {
-        StartCoroutine(LateStart(3));
-    }
-
-    private IEnumerator LateStart(float waitTime) // LATE INIT BECAUSE OF VRTK TAKING TIME TO LOAD
-    {
-        yield return new WaitForSeconds(waitTime);
-
-        player = GameObject.FindGameObjectWithTag(Tags.player);
-    }
-
     private void Update()
     {
-        anim.SetBool(hash.playerInRangeBool, playerInRange);
-        float attack = anim.GetFloat(hash.attackFloat);
+        anim.SetBool(HashID.instance.playerInRangeBool, playerInRange);
+        float attack = anim.GetFloat(HashID.instance.attackFloat);
 
         if (attack > 0.4 && playerInRange)
         {
@@ -45,13 +30,13 @@ public class ZombieAttack : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (zombieAI.colID == 2 && other.gameObject == player)
+        if (zombieAI.colID == 2 && other.gameObject == PlayerController.instance.gameObject)
             playerInRange = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (zombieAI.colID == 2 && other.gameObject == player)
+        if (zombieAI.colID == 2 && other.gameObject == PlayerController.instance.gameObject)
             playerInRange = false;
     }
 }
