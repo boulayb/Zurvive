@@ -25,7 +25,9 @@ public class ZombieAttack : MonoBehaviour
 
         if (attack > 0.4 && playerInRange)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PlayerStats.Energy = EnergyManager.instance.GetEnergy();
+            PlayerStats.PlayerDead = true;
+            SceneManager.LoadScene("MenuNextDay");
         }
     }
     private void OnTriggerStay(Collider other)

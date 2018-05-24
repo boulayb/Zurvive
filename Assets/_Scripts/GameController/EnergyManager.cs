@@ -33,6 +33,7 @@ public class EnergyManager : MonoBehaviour
             Destroy(gameObject);
 
         energy = MaxEnergy;
+        PlayerStats.MaxEnergy = MaxEnergy;
     }
 
     private void Update()

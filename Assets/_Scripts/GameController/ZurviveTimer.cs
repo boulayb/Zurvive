@@ -27,6 +27,8 @@ public class ZurviveTimer : MonoBehaviour
 
     private void EndOfTime()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerStats.Energy = EnergyManager.instance.GetEnergy();
+        PlayerStats.PlayerDead = true;
+        SceneManager.LoadScene("MenuNextDay");
     }
 }
