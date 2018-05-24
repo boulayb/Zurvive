@@ -4,15 +4,18 @@ using UnityEngine;
 
 public static class PlayerStats
 {
+    private static int energy, maxEnergy, daysSurvived;
+    private static bool playerDead;
+
     public static int Energy
     {
         get
         {
-            return Energy;
+            return energy;
         }
         set
         {
-            Energy = value;
+            energy = value;
         }
     }
 
@@ -20,11 +23,11 @@ public static class PlayerStats
     {
         get
         {
-            return MaxEnergy;
+            return maxEnergy;
         }
         set
         {
-            MaxEnergy = value;
+            maxEnergy = value;
         }
     }
 
@@ -32,11 +35,11 @@ public static class PlayerStats
     {
         get
         {
-            return DaysSurvived;
+            return daysSurvived;
         }
         set
         {
-            DaysSurvived = value;
+            daysSurvived = value;
         }
     }
 
@@ -44,11 +47,11 @@ public static class PlayerStats
     {
         get
         {
-            return PlayerDead;
+            return playerDead;
         }
         set
         {
-            PlayerDead = value;
+            playerDead = value;
         }
     }
 }
