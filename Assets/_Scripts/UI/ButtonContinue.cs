@@ -13,9 +13,9 @@ public class ButtonContinue : MonoBehaviour
         button = GetComponent<Button>();
 
         if (PlayerStats.PlayerDead == true || PlayerStats.Energy <= 0)
-            button.interactable = false;
-
-        button.onClick.AddListener(TaskOnClick);
+            button.transform.parent.gameObject.SetActive(false);
+        else
+            button.onClick.AddListener(TaskOnClick);
     }
 
     private void TaskOnClick()
