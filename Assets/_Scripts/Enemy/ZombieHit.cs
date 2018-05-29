@@ -8,6 +8,7 @@ public class ZombieHit : MonoBehaviour
 
     private Animator anim;
     private ZombieAI zombieAI;
+    private bool energyLost = false;
 
     private void Awake()
     {
@@ -24,8 +25,14 @@ public class ZombieHit : MonoBehaviour
             anim.SetBool(HashID.instance.zombieIsHit, zombieIsHit);
             if (anim.GetCurrentAnimatorStateInfo(2).IsName("Zombie Reaction Hit"))
             {
-                EnergyManager.instance.LooseEnergy(EnergyManager.EnergyEventName.HITTING);
+                if (energyLost == false)
+                    EnergyManager.instance.LooseEnergy(EnergyManager.EnergyEventName.HITTING);
+                energyLost = true;
                 zombieIsHit = false;
+            }
+            if (anim.IsInTransition(2) && anim.GetNextAnimatorStateInfo(2).IsName("New State"))
+            {
+                energyLost = false;
             }
         }
     }
