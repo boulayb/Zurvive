@@ -34,7 +34,8 @@ public class EnergyManager : MonoBehaviour
         else if (instance != this)
             Destroy(gameObject);
 
-        energy = MaxEnergy;
+        if (PlayerStats.Energy <= 0)
+            energy = MaxEnergy;
         PlayerStats.MaxEnergy = MaxEnergy;
     }
 

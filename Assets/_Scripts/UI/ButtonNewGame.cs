@@ -15,8 +15,8 @@ public class ButtonNewGame : MonoBehaviour
     {
         PlayerStats.DaysSurvived = 0;
         PlayerStats.PlayerDead = false;
-        PlayerStats.MaxEnergy = 1;
-        PlayerStats.Energy = 1;
+        PlayerStats.MaxEnergy = -1;
+        PlayerStats.Energy = -1;
         SceneManager.LoadScene("ZurviveTest");
     }
 }
