@@ -7,6 +7,6 @@ public class SetEnergyBar : MonoBehaviour
 {
     private void Start()
     {
-        GetComponent<Image>().fillAmount = PlayerStats.Energy / PlayerStats.MaxEnergy;
+        GetComponent<Image>().fillAmount = (float)PlayerStats.Energy / PlayerStats.MaxEnergy;
     }
 }
