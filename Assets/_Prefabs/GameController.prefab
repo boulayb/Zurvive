@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4504268737003742}
   - component: {fileID: 114745547396943074}
+  - component: {fileID: 114633453596797056}
+  - component: {fileID: 114070362204401142}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -40,6 +42,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114070362204401142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752737483060484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d5405c9b5e22945ad2523abcafc330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxEnergy: 1000
+  sprintingThreshold: 8
+  runningThreshold: 4.5
+  walkingThreshold: 2
+  energyLostSprinting: 3
+  energyLostRunning: 2
+  energyLostWalking: 1
+  energyLostHitting: 25
+  energyLostKilling: 50
+  energyLostNextDay: 100
+--- !u!114 &114633453596797056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752737483060484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d92635e824bc14c85096581dbf41ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeft: 120
 --- !u!114 &114745547396943074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,7 +87,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedFloat: 0
+  attackFloat: 0
   AngularSpeedFloat: 0
   playerInSightBool: 0
   playerInRangeBool: 0
+  zombieIsHit: 0
   locomotionState: 0
