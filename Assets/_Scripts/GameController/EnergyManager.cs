@@ -15,11 +15,13 @@ public class EnergyManager : MonoBehaviour
     public int energyLostWalking = 1;
     public int energyLostHitting = 25;
     public int energyLostKilling = 50;
+    public int energyLostNextDay = 100;
 
     public enum EnergyEventName
     {
         HITTING,
-        KILLING
+        KILLING,
+        NEXTDAY
     }
 
     private bool waiting = false;
@@ -70,5 +72,7 @@ public class EnergyManager : MonoBehaviour
             energy -= energyLostHitting;
         else if (eventName == EnergyEventName.KILLING)
             energy -= energyLostKilling;
+        else if (eventName == EnergyEventName.NEXTDAY)
+            energy -= energyLostNextDay;
     }
 }
