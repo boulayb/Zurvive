@@ -38,12 +38,14 @@ namespace VRTK
         protected List<string> validRightHands = new List<string>()
         {
             "OpenVR Controller - Right",
+            "OpenVR Controller(Vive. Controller MV) - Right",
             "Oculus Touch - Right",
             "Oculus Remote"
         };
         protected List<string> validLeftHands = new List<string>()
         {
             "OpenVR Controller - Left",
+            "OpenVR Controller(Vive. Controller MV) - Left",
             "Oculus Touch - Left"
         };
 
@@ -123,6 +125,8 @@ namespace VRTK
             { ButtonTypes.ButtonTwo, KeyCode.Joystick1Button3 },
             { ButtonTypes.StartMenu, KeyCode.Joystick1Button7 }
         };
+
+        private bool settingCaches = false;
 
         /// <summary>
         /// The ProcessUpdate method enables an SDK to run logic for every Unity Update
@@ -664,6 +668,13 @@ namespace VRTK
 
         protected virtual void SetTrackedControllerCaches(bool forceRefresh = false)
         {
+            if (settingCaches)
+            {
+                return;
+            }
+
+            settingCaches = true;
+
             if (forceRefresh)
             {
                 cachedLeftController = null;
@@ -681,8 +692,8 @@ namespace VRTK
                     {
                         cachedLeftTracker = cachedLeftController.GetComponent<SDK_UnityControllerTracker>();
                         cachedLeftVelocityEstimator = cachedLeftController.GetComponent<VRTK_VelocityEstimator>();
+                        SetControllerButtons(ControllerHand.Left);
                     }
-                    SetControllerButtons(ControllerHand.Left);
                 }
                 if (cachedRightController == null && sdkManager.loadedSetup.actualRightController != null)
                 {
@@ -692,10 +703,12 @@ namespace VRTK
                     {
                         cachedRightTracker = cachedRightController.GetComponent<SDK_UnityControllerTracker>();
                         cachedRightVelocityEstimator = cachedRightController.GetComponent<VRTK_VelocityEstimator>();
+                        SetControllerButtons(ControllerHand.Right);
                     }
-                    SetControllerButtons(ControllerHand.Right);
                 }
             }
+
+            settingCaches = false;
         }
 
         protected virtual void SetControllerButtons(ControllerHand hand)
