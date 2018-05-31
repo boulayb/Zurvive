@@ -25,7 +25,6 @@ public class ZombieDeath : MonoBehaviour
             if (collision.gameObject.tag == Tags.weapons &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToKill)
             {
-                EnergyManager.instance.LooseEnergy(EnergyManager.EnergyEventName.KILLING);
                 Die();
             }
             else if (collision.gameObject.tag == Tags.weapons &&

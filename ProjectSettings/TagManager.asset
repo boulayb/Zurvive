@@ -20,6 +20,7 @@ TagManager:
   - Enemy
   - CameraRig
   - TeleportIgnore
+  - Body
   layers:
   - Default
   - TransparentFX

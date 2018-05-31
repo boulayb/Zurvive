@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnergyManager : MonoBehaviour
 {
@@ -13,16 +14,7 @@ public class EnergyManager : MonoBehaviour
     public int energyLostSprinting = 3;
     public int energyLostRunning = 2;
     public int energyLostWalking = 1;
-    public int energyLostHitting = 25;
-    public int energyLostKilling = 50;
     public int energyLostNextDay = 100;
-
-    public enum EnergyEventName
-    {
-        HITTING,
-        KILLING,
-        NEXTDAY
-    }
 
     private bool waiting = false;
     private int energy;
@@ -36,6 +28,8 @@ public class EnergyManager : MonoBehaviour
 
         if (PlayerStats.Energy <= 0)
             energy = MaxEnergy;
+        else
+            energy = PlayerStats.Energy;
         PlayerStats.MaxEnergy = MaxEnergy;
     }
 
@@ -51,6 +45,11 @@ public class EnergyManager : MonoBehaviour
                 energy -= energyLostRunning;
             else if (speed > walkingThreshold)
                 energy -= energyLostWalking;
+            if (energy <= 0)
+            {
+                PlayerStats.Energy = energy;
+                SceneManager.LoadScene("MenuNextDay");
+            }
             StartCoroutine(WaitTime(1));
         }
     }
@@ -67,13 +66,8 @@ public class EnergyManager : MonoBehaviour
         return energy;
     }
 
-    public void LooseEnergy(EnergyEventName eventName)
+    public void LooseEnergy(int lostEnergy)
     {
-        if (eventName == EnergyEventName.HITTING)
-            energy -= energyLostHitting;
-        else if (eventName == EnergyEventName.KILLING)
-            energy -= energyLostKilling;
-        else if (eventName == EnergyEventName.NEXTDAY)
-            energy -= energyLostNextDay;
+        energy -= lostEnergy;
     }
 }

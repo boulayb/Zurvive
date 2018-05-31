@@ -9,7 +9,7 @@ public class ExitGate : MonoBehaviour
     {
         if (other.gameObject == PlayerController.instance.gameObject)
         {
-            EnergyManager.instance.LooseEnergy(EnergyManager.EnergyEventName.NEXTDAY);
+            EnergyManager.instance.LooseEnergy(EnergyManager.instance.energyLostNextDay);
             PlayerStats.Energy = EnergyManager.instance.GetEnergy();
             PlayerStats.DaysSurvived += 1;
             SceneManager.LoadScene("MenuNextDay");
