@@ -15,6 +15,7 @@ public class EnergyManager : MonoBehaviour
     public int energyLostRunning = 2;
     public int energyLostWalking = 1;
     public int energyLostNextDay = 100;
+    public int energyGainedFood = 100;
 
     private bool waiting = false;
     private int energy;
@@ -66,8 +67,15 @@ public class EnergyManager : MonoBehaviour
         return energy;
     }
 
-    public void LooseEnergy(int lostEnergy)
+    public void LooseEnergy(int energyLost)
     {
-        energy -= lostEnergy;
+        energy -= energyLost;
+    }
+
+    public void AddEnergy(int energyAdded)
+    {
+        energy += energyAdded;
+        if (energy > MaxEnergy)
+            energy = MaxEnergy;
     }
 }

@@ -21,6 +21,7 @@ TagManager:
   - CameraRig
   - TeleportIgnore
   - Body
+  - Food
   layers:
   - Default
   - TransparentFX
