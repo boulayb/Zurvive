@@ -768,6 +768,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1125648579495420, guid: 0f89c99833e043b40b7d6229c1038c8c,
     type: 2}
   m_PrefabInternal: {fileID: 702315887}
+--- !u!114 &702315891 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114116920035053186, guid: 0f89c99833e043b40b7d6229c1038c8c,
+    type: 2}
+  m_PrefabInternal: {fileID: 702315887}
+  m_Script: {fileID: 11500000, guid: 9000d35c023f9074e894e169b50243b8, type: 3}
 --- !u!1001 &759243794
 Prefab:
   m_ObjectHideFlags: 0
@@ -1764,6 +1770,11 @@ Prefab:
       propertyPath: highlightObjectPrefab
       value: 
       objectReference: {fileID: 702315888}
+    - target: {fileID: 114958254030485388, guid: 569e629589885254d84ea1b65e4636b2,
+        type: 2}
+      propertyPath: defaultSnappedInteractableObject
+      value: 
+      objectReference: {fileID: 702315891}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 569e629589885254d84ea1b65e4636b2, type: 2}
   m_IsPrefabParent: 0
