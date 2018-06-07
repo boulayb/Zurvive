@@ -12,4 +12,7 @@ public class Tags : MonoBehaviour
     public const string body = "Body";
     public const string cameraRig = "CameraRig";
     public const string food = "Food";
+    public const string foodSpawn = "FoodSpawn";
+    public const string zombieSpawn = "ZombieSpawn";
+    public const string patrolPoint = "PatrolPoint";
 }

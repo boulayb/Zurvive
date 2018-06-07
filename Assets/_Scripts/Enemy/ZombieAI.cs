@@ -44,7 +44,7 @@ public class ZombieAI : MonoBehaviour
             Attacking();
         else if (zombieSight.personalLastSighting != zombieSight.resetPosition)
             Chassing();
-        else
+        else if (patrolWayPoints.Length > 0)
             Patrolling();
     }
 

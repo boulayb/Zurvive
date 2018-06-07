@@ -22,6 +22,9 @@ TagManager:
   - TeleportIgnore
   - Body
   - Food
+  - FoodSpawn
+  - ZombieSpawn
+  - PatrolPoint
   layers:
   - Default
   - TransparentFX

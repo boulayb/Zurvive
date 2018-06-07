@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114745547396943074}
   - component: {fileID: 114633453596797056}
   - component: {fileID: 114070362204401142}
+  - component: {fileID: 114704062490634224}
+  - component: {fileID: 114251848846134608}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -60,9 +62,26 @@ MonoBehaviour:
   energyLostSprinting: 3
   energyLostRunning: 2
   energyLostWalking: 1
-  energyLostHitting: 25
-  energyLostKilling: 50
   energyLostNextDay: 100
+  energyGainedFood: 100
+--- !u!114 &114251848846134608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752737483060484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e90ad3ea237084b89abaceeaaf6335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zombies:
+  - {fileID: 1275271943060122, guid: 198c3af739c8b014fb99a0adfddc1702, type: 2}
+  TurnsBeforeIncrease: 1
+  NbToIncrease: 2
+  ZombiesAtStart: 2
+  MaximumZombiesPresent: 12
+  CanSpawnInSamePlace: 0
 --- !u!114 &114633453596797056
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,7 +93,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1d92635e824bc14c85096581dbf41ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 120
+  timeLeft: 300
+--- !u!114 &114704062490634224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752737483060484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62104012b1c6a9045a93d6860c70b940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodItems:
+  - {fileID: 1601798382640644, guid: d5cff7c670fcf254d9c569318ff9186a, type: 2}
+  - {fileID: 1362330123623682, guid: e3d9de5ce19082d45b006fd420ce8655, type: 2}
+  TurnsBeforeDecrease: 1
+  NbToDecrease: 1
+  FoodAtStart: 6
+  MinimumFoodPresent: 2
+  CanSpawnInSamePlace: 0
 --- !u!114 &114745547396943074
 MonoBehaviour:
   m_ObjectHideFlags: 1
