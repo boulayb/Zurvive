@@ -26,6 +26,7 @@ TagManager:
   - PatrolPoint
   - Crowbar
   - Gun
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 111629009254735772}
   - component: {fileID: 54522246740584250}
   - component: {fileID: 64680822606434590}
-  - component: {fileID: 114496492243301600}
   - component: {fileID: 114476729767031844}
   - component: {fileID: 114477461769929668}
+  - component: {fileID: 114970448646802884}
   m_Layer: 9
   m_Name: ZurviveGun
   m_TagString: Gun
@@ -848,7 +848,7 @@ MonoBehaviour:
   velocityLimit: Infinity
   angularVelocityLimit: Infinity
   maxDistanceDelta: 10
---- !u!114 &114496492243301600
+--- !u!114 &114970448646802884
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1384421221439078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3abaf4521bf2344ea21ed3020b98eb2, type: 3}
+  m_Script: {fileID: 11500000, guid: f56b0aaf84d5e5349b6350bc5bd26af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
@@ -869,11 +869,11 @@ MonoBehaviour:
   validDrop: 1
   grabOverrideButton: 0
   allowedGrabControllers: 0
-  grabAttachMechanicScript: {fileID: 0}
+  grabAttachMechanicScript: {fileID: 114477461769929668}
   secondaryGrabActionScript: {fileID: 114476729767031844}
-  isUsable: 0
+  isUsable: 1
   holdButtonToUse: 1
-  useOnlyIfGrabbed: 0
+  useOnlyIfGrabbed: 1
   pointerActivatesUseAction: 0
   useOverrideButton: 0
   allowedUseControllers: 0
