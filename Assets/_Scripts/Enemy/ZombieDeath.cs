@@ -22,12 +22,12 @@ public class ZombieDeath : MonoBehaviour
     {
         if (zombieAI)
         {
-            if (collision.gameObject.tag == Tags.weapons &&
+            if (collision.gameObject.tag == Tags.crowbar &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToKill)
             {
                 Die();
             }
-            else if (collision.gameObject.tag == Tags.weapons &&
+            else if (collision.gameObject.tag == Tags.crowbar &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToPush)
             {
                 zombieHit.zombieIsHit = true;

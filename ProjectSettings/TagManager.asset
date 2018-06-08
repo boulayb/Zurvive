@@ -16,7 +16,6 @@ TagManager:
   - SnapCylinder
   - SnapSaucer
   - Head
-  - Weapons
   - Enemy
   - CameraRig
   - TeleportIgnore
@@ -25,6 +24,8 @@ TagManager:
   - FoodSpawn
   - ZombieSpawn
   - PatrolPoint
+  - Crowbar
+  - Gun
   layers:
   - Default
   - TransparentFX

@@ -20,7 +20,7 @@ public class ZombieHitDetector : MonoBehaviour
     {
         if (zombieAI)
         {
-            if (collision.gameObject.tag == Tags.weapons &&
+            if (collision.gameObject.tag == Tags.crowbar &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToPush)
             {
                 zombieHit.zombieIsHit = true;
