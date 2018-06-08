@@ -9,6 +9,7 @@ public class Tags : MonoBehaviour
     public const string crowbar = "Crowbar";
     public const string gun = "Gun";
     public const string bullet = "Bullet";
+    public const string magazine = "Magazine";
     public const string gameController = "GameController";
     public const string head = "Head";
     public const string body = "Body";

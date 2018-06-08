@@ -47,7 +47,7 @@ public class GunAmmo : VRTK_InteractableObject
         {
             Bullets++;
             Destroy(other.gameObject);
-            if (Bullets == 1)
+            if (Bullets == 1 && bullet != null)
                 bullet.SetActive(true);
         }
     }
