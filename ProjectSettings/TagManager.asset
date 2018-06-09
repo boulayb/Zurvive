@@ -4,21 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ExcludeTeleport
-  - Cubes
-  - Spheres
-  - Saucers
-  - OtherSaucers
-  - Torso
-  - Arm
-  - Leg
-  - SnapCube
-  - SnapCylinder
-  - SnapSaucer
   - Head
   - Enemy
   - CameraRig
-  - TeleportIgnore
   - Body
   - Food
   - FoodSpawn
@@ -28,6 +16,8 @@ TagManager:
   - Gun
   - Bullet
   - Magazine
+  - LeftController
+  - RightController
   layers:
   - Default
   - TransparentFX

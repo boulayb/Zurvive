@@ -23,8 +23,13 @@ public class ZombieHitDetector : MonoBehaviour
             if (collision.gameObject.tag == Tags.crowbar &&
                 collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToPush)
             {
-                zombieHit.zombieIsHit = true;
+                Hit();
             }
         }
+    }
+
+    public void Hit()
+    {
+        zombieHit.zombieIsHit = true;
     }
 }

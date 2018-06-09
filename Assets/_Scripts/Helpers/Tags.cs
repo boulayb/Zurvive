@@ -18,4 +18,6 @@ public class Tags : MonoBehaviour
     public const string foodSpawn = "FoodSpawn";
     public const string zombieSpawn = "ZombieSpawn";
     public const string patrolPoint = "PatrolPoint";
+    public const string leftController = "LeftController";
+    public const string rightController = "RightController";
 }
