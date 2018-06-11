@@ -4,7 +4,9 @@ using VRTK;
 
 public class CrowbarGrab : VRTK_InteractableObject
 {
+    [Header("Crowbar")]
     public int EnergyLostDivider = 30;
+    public GameObject BloodEffectPrefab;
 
     private float impactMagnifier = 120f;
     private float collisionForce = 0f;
@@ -48,6 +50,8 @@ public class CrowbarGrab : VRTK_InteractableObject
             {
                 waiting = true;
                 EnergyManager.instance.LooseEnergy((int)(collisionForce / EnergyLostDivider));
+                GameObject impact = Instantiate(BloodEffectPrefab, collision.contacts[0].point, Quaternion.LookRotation(collision.contacts[0].normal));
+                Destroy(impact, 1.1f);
                 StartCoroutine(WaitTime(1));
             }
         }

@@ -14,7 +14,6 @@ public class ZombieAI : MonoBehaviour
     public Transform[] patrolWayPoints;
 
     private ZombieSight zombieSight;
-    private ZombieAttack zombieAttack;
     private NavMeshAgent nav;
     private float chaseTimer;
     private float patrolTimer;
@@ -23,7 +22,6 @@ public class ZombieAI : MonoBehaviour
     private void Awake()
     {
         zombieSight = GetComponent<ZombieSight>();
-        zombieAttack = GetComponent<ZombieAttack>();
         nav = GetComponent<NavMeshAgent>();
 
         wayPointIndex = 0;
@@ -40,11 +38,9 @@ public class ZombieAI : MonoBehaviour
 
     private void Update()
     {
-        if (zombieAttack.playerInRange)
-            Attacking();
-        else if (zombieSight.personalLastSighting != zombieSight.resetPosition)
+        if (zombieSight.personalLastSighting != zombieSight.resetPosition)
             Chassing();
-        else if (patrolWayPoints.Length > 0)
+        else
             Patrolling();
     }
 
@@ -77,10 +73,6 @@ public class ZombieAI : MonoBehaviour
             nav.Warp(transform.position);
             nav.updatePosition = true;
         }
-    }
-
-    private void Attacking()
-    {
     }
 
     private void Chassing()
@@ -119,24 +111,28 @@ public class ZombieAI : MonoBehaviour
 
     private void Patrolling()
     {
-        nav.speed = patrolSpeed;
-
-        if (nav.destination == zombieSight.resetPosition || nav.remainingDistance < nav.stoppingDistance)
+        if (patrolWayPoints != null && patrolWayPoints.Length > 0)
         {
-            patrolTimer += Time.deltaTime;
+            nav.speed = patrolSpeed;
 
-            if (patrolTimer >= patrolWaitTime)
+            if (nav.destination == zombieSight.resetPosition || nav.remainingDistance < nav.stoppingDistance)
             {
-                if (wayPointIndex == patrolWayPoints.Length - 1)
-                    wayPointIndex = 0;
-                else
-                    wayPointIndex++;
-                patrolTimer = 0f;
-            }
-        }
-        else
-            patrolTimer = 0f;
+                patrolTimer += Time.deltaTime;
 
-        nav.destination = patrolWayPoints[wayPointIndex].position;
+                if (patrolTimer >= patrolWaitTime)
+                {
+                    if (wayPointIndex == patrolWayPoints.Length - 1)
+                       wayPointIndex = 0;
+                    else
+                       wayPointIndex++;
+                    patrolTimer = 0f;
+                }
+            }
+            else
+                patrolTimer = 0f;
+
+            if (patrolWayPoints[wayPointIndex])
+                nav.destination = patrolWayPoints[wayPointIndex].position;
+        }
     }
 }

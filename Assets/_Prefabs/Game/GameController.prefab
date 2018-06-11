@@ -106,7 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodItems:
-  - {fileID: 1601798382640644, guid: d5cff7c670fcf254d9c569318ff9186a, type: 2}
+  - {fileID: 1344600312092668, guid: 84b04d6915049ab4ba3e7a7442867f7a, type: 2}
+  - {fileID: 1362330123623682, guid: e3d9de5ce19082d45b006fd420ce8655, type: 2}
   - {fileID: 1362330123623682, guid: e3d9de5ce19082d45b006fd420ce8655, type: 2}
   TurnsBeforeDecrease: 1
   NbToDecrease: 1

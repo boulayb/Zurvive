@@ -9,7 +9,10 @@ public class Bag : MonoBehaviour
         if (other.gameObject.tag == Tags.food)
         {
             EnergyManager.instance.AddEnergy(EnergyManager.instance.energyGainedFood);
-            Destroy(other.gameObject.transform.parent.gameObject);
+            if (other.transform.parent)
+                Destroy(other.transform.parent.gameObject);
+            else
+                Destroy(other.gameObject);
         }
     }
 }
