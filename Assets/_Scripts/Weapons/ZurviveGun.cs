@@ -26,6 +26,7 @@ public class ZurviveGun : VRTK_InteractableObject
     private GameObject bulletSpot;
     private GameObject barrelEnd;
     private GameObject bullet;
+    private GameObject soundDistance;
     private ZurviveGunSlide slide;
     private Rigidbody slideRigidbody;
     private Collider slideCollider;
@@ -44,6 +45,7 @@ public class ZurviveGun : VRTK_InteractableObject
         trigger = transform.Find("Trigger").gameObject;
         bullet = transform.Find("Inside").Find("Bullet").gameObject;
         bulletSpot = transform.Find("TopPart").Find("BulletSpot").gameObject;
+        soundDistance = transform.Find("SoundDistance").gameObject;
         slide = transform.Find("TopPart").GetComponent<ZurviveGunSlide>();
         slideRigidbody = slide.GetComponent<Rigidbody>();
         slideCollider = slide.GetComponent<Collider>();
@@ -131,6 +133,7 @@ public class ZurviveGun : VRTK_InteractableObject
         base.StartUsing(currentUsingObject);
         if (loaded == true && slide.IsClosed() == true)
         {
+            soundDistance.SetActive(true);
             muzzleFlash.Play();
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f, 0.2f, 0.01f);
             slide.Fire();
@@ -171,6 +174,12 @@ public class ZurviveGun : VRTK_InteractableObject
                 bullet.SetActive(false);
             }
         }
+    }
+
+    public override void StopUsing(VRTK_InteractUse previousUsingObject = null, bool resetUsingObjectState = true)
+    {
+        base.StopUsing(previousUsingObject, resetUsingObjectState);
+        soundDistance.SetActive(false);
     }
 
     public void Load()

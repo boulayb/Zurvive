@@ -32,6 +32,12 @@ public class ZombieSight : MonoBehaviour
         anim.SetBool(HashID.instance.playerInSightBool, playerInSight);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == Tags.sound && playerInSight == false)
+            personalLastSighting = PlayerController.instance.gameObject.transform.position;
+    }
+
     private void OnTriggerStay(Collider other)
     {
         if (zombieAI.colID >= 1 && other.gameObject == PlayerController.instance.gameObject)

@@ -18,6 +18,7 @@ TagManager:
   - Magazine
   - LeftController
   - RightController
+  - Sound
   layers:
   - Default
   - TransparentFX
