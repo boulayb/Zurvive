@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 114070362204401142}
   - component: {fileID: 114704062490634224}
   - component: {fileID: 114251848846134608}
+  - component: {fileID: 114722430499191754}
+  - component: {fileID: 114073045880301698}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -64,6 +66,24 @@ MonoBehaviour:
   energyLostWalking: 1
   energyLostNextDay: 100
   energyGainedFood: 100
+--- !u!114 &114073045880301698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752737483060484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398f68f725552194b934d06f4eac9674, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BulletItems:
+  - {fileID: 1093002769344350, guid: 7b0ea6087960c0e47a27b75ff1caeb79, type: 2}
+  TurnsBeforeDecrease: 1
+  NbToDecrease: 5
+  BulletAtStart: 30
+  MinimumBulletPresent: 5
+  CanSpawnInSamePlace: 1
 --- !u!114 &114251848846134608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +134,26 @@ MonoBehaviour:
   FoodAtStart: 6
   MinimumFoodPresent: 2
   CanSpawnInSamePlace: 0
+--- !u!114 &114722430499191754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752737483060484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf2c6e3496cc16429a831b732d771e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MagItems:
+  - {fileID: 1850888956419578, guid: 9aedc54cabe58e843aa63f5cd3050133, type: 2}
+  - {fileID: 1577174024164234, guid: 8d87a44b1b804594394a5bc2113953d8, type: 2}
+  TurnsBeforeDecrease: 1
+  NbToDecrease: 1
+  MagAtStart: 6
+  MinimumMagPresent: 1
+  CanSpawnInSamePlace: 0
+  MaxBulletInMag: 10
 --- !u!114 &114745547396943074
 MonoBehaviour:
   m_ObjectHideFlags: 1

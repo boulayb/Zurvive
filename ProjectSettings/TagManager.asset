@@ -19,6 +19,8 @@ TagManager:
   - LeftController
   - RightController
   - Sound
+  - MagSpawn
+  - BulletSpawn
   layers:
   - Default
   - TransparentFX

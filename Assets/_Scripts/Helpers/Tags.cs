@@ -17,6 +17,8 @@ public class Tags : MonoBehaviour
     public const string food = "Food";
     public const string foodSpawn = "FoodSpawn";
     public const string zombieSpawn = "ZombieSpawn";
+    public const string magSpawn = "MagSpawn";
+    public const string bulletSpawn = "BulletSpawn";
     public const string patrolPoint = "PatrolPoint";
     public const string sound = "Sound";
 }
