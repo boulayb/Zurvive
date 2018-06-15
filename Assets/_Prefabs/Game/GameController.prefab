@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114251848846134608}
   - component: {fileID: 114722430499191754}
   - component: {fileID: 114073045880301698}
+  - component: {fileID: 114675121460926660}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -114,6 +115,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLeft: 300
+--- !u!114 &114675121460926660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1752737483060484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a8b256664c16b4fbcf1e11851f055b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114704062490634224
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,7 +159,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MagItems:
   - {fileID: 1850888956419578, guid: 9aedc54cabe58e843aa63f5cd3050133, type: 2}
-  - {fileID: 1577174024164234, guid: 8d87a44b1b804594394a5bc2113953d8, type: 2}
   TurnsBeforeDecrease: 1
   NbToDecrease: 1
   MagAtStart: 6

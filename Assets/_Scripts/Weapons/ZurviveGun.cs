@@ -9,7 +9,6 @@ public class ZurviveGun : VRTK_InteractableObject
     public GameObject MagPrefab;
     public GameObject shellPrefab;
     public GameObject bulletPrefab;
-    public GameObject EmptyMagPrefab;
     public GameObject ImpactEffectPrefab;
     public GameObject BloodEffectPrefab;
 
@@ -37,8 +36,9 @@ public class ZurviveGun : VRTK_InteractableObject
 
     private VRTK_ControllerEvents controllerEvents = null;
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
         mag = transform.Find("Ammo").gameObject;
         magSpot = transform.Find("MagSpot").gameObject;
         barrelEnd = transform.Find("BarrelEnd").gameObject;
@@ -50,9 +50,14 @@ public class ZurviveGun : VRTK_InteractableObject
         slideRigidbody = slide.GetComponent<Rigidbody>();
         slideCollider = slide.GetComponent<Collider>();
         muzzleFlash = barrelEnd.GetComponent<ParticleSystem>();
+    }
 
+    private void Start()
+    {
         if (HasMag == false)
-            mag.SetActive(false);
+            ToggleMag(false, 0);
+        if (loaded == true)
+            bullet.SetActive(true);
     }
 
     private void ToggleSlide(bool state)
@@ -108,17 +113,9 @@ public class ZurviveGun : VRTK_InteractableObject
     {
         if (HasMag == true)
         {
-            HasMag = false;
             magSpot.SetActive(false);
-            if (Bullets > 0)
-            {
-                GameObject ejectedMag = Instantiate(MagPrefab, magSpot.transform.position - new Vector3(0, 0.1f, 0), magSpot.transform.rotation);
-                ejectedMag.GetComponent<GunAmmo>().Bullets = Bullets;
-            }
-            else
-                Instantiate(EmptyMagPrefab, magSpot.transform.position - new Vector3(0, 0.1f, 0), magSpot.transform.rotation);
-            mag.SetActive(false);
-            Bullets = 0;
+            Instantiate(MagPrefab, magSpot.transform.position - new Vector3(0, 0.1f, 0), magSpot.transform.rotation).GetComponent<GunAmmo>().SetBullets(Bullets);
+            ToggleMag(false, 0);
         }
     }
 
@@ -198,6 +195,13 @@ public class ZurviveGun : VRTK_InteractableObject
         }
     }
 
+    public void ToggleMag(bool status, int bullets)
+    {
+        HasMag = status;
+        mag.SetActive(status);
+        Bullets = bullets;
+    }
+
     public void Rack()
     {
         racked = true;
@@ -226,10 +230,8 @@ public class ZurviveGun : VRTK_InteractableObject
     {
         if (HasMag == false && other.gameObject.tag == Tags.magazine)
         {
-            Bullets = other.transform.parent.gameObject.GetComponent<GunAmmo>().Bullets;
+            ToggleMag(true, other.transform.parent.gameObject.GetComponent<GunAmmo>().Bullets);
             Destroy(other.transform.parent.gameObject);
-            mag.SetActive(true);
-            HasMag = true;
         }
     }
 }

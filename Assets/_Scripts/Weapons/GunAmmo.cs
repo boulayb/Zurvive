@@ -12,11 +12,15 @@ public class GunAmmo : VRTK_InteractableObject
     private GameObject bullet;
     private GameObject trigger;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        bullet = transform.Find("Bullet").gameObject;
+        trigger = transform.Find("Capsule").gameObject;
+    }
+
     private void Start()
     {
-        bullet = gameObject.transform.GetChild(0).gameObject;
-        trigger = gameObject.transform.GetChild(3).gameObject;
-
         if (Bullets <= 0)
             bullet.SetActive(false);
     }
@@ -50,5 +54,14 @@ public class GunAmmo : VRTK_InteractableObject
             if (Bullets == 1 && bullet != null)
                 bullet.SetActive(true);
         }
+    }
+
+    public void SetBullets(int bullets)
+    {
+        Bullets = bullets;
+        if (Bullets <= 0)
+            bullet.SetActive(false);
+        else
+            bullet.SetActive(true);
     }
 }

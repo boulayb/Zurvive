@@ -9,6 +9,7 @@ public class ExitGate : MonoBehaviour
     {
         if (other.gameObject == PlayerController.instance.gameObject)
         {
+            InventoryManager.instance.SaveInventory();
             EnergyManager.instance.LooseEnergy(EnergyManager.instance.energyLostNextDay);
             PlayerStats.Energy = EnergyManager.instance.GetEnergy();
             PlayerStats.DaysSurvived += 1;

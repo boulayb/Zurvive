@@ -21,4 +21,6 @@ public class Tags : MonoBehaviour
     public const string bulletSpawn = "BulletSpawn";
     public const string patrolPoint = "PatrolPoint";
     public const string sound = "Sound";
+    public const string leftController = "LeftController";
+    public const string rightController = "RightController";
 }

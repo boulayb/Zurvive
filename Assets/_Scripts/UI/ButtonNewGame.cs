@@ -17,6 +17,12 @@ public class ButtonNewGame : MonoBehaviour
         PlayerStats.PlayerDead = false;
         PlayerStats.MaxEnergy = -1;
         PlayerStats.Energy = -1;
+        PlayerStats.Bullets1 = -1;
+        PlayerStats.Bullets2 = -1;
+        PlayerStats.Bullets3 = -1;
+        PlayerStats.BulletsGun = 10;
+        PlayerStats.Gun = true;
+        PlayerStats.Melee = true;
         SceneManager.LoadScene("ZurviveTest");
     }
 }

@@ -1276,6 +1276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4493801598292006}
   - component: {fileID: 114706138936962060}
+  - component: {fileID: 114890671245024310}
   m_Layer: 0
   m_Name: PlayerHips
   m_TagString: Untagged
@@ -1608,14 +1609,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1262860646788412}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.01}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4386527054350318}
   m_Father: {fileID: 4379550078288694}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4190132095850166
 Transform:
   m_ObjectHideFlags: 1
@@ -2160,14 +2161,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1300695452411974}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.001}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4197544673684096}
   m_Father: {fileID: 4988827191538940}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4730950540914666
 Transform:
   m_ObjectHideFlags: 1
@@ -2435,14 +2436,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1172864841379580}
-  m_LocalRotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -0.012}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 4161450992325622}
   m_Father: {fileID: 4070347022350052}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4981539840466088
 Transform:
   m_ObjectHideFlags: 1
@@ -5126,6 +5127,21 @@ MonoBehaviour:
   checkType: 1
   identifiers:
   - Magazine
+--- !u!114 &114890671245024310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1937397538487014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e8675b4baa28d449c3566d8255cd40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GunPrefab: {fileID: 1384421221439078, guid: f0f2261735d9eb84abfdb5e508b96a1c, type: 2}
+  MeleePrefab: {fileID: 1125648579495420, guid: 0f89c99833e043b40b7d6229c1038c8c,
+    type: 2}
+  AmmoPrefab: {fileID: 1850888956419578, guid: 9aedc54cabe58e843aa63f5cd3050133, type: 2}
 --- !u!114 &114949027190625772
 MonoBehaviour:
   m_ObjectHideFlags: 1

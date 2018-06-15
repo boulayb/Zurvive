@@ -27,9 +27,7 @@ public class MagGenerator : MonoBehaviour
         for (int i = 0; i < magToSpawn; i++)
         {
             int spawnPoint = Random.Range(0, spawns.Length - spawnsOffset);
-            GunAmmo newMag = Instantiate(MagItems[Random.Range(0, MagItems.Length - 1)], spawns[spawnPoint].transform.position, spawns[spawnPoint].transform.rotation).GetComponent<GunAmmo>();
-            if (newMag.Bullets > 0)
-                newMag.Bullets = Random.Range(1, MaxBulletInMag);
+            Instantiate(MagItems[Random.Range(0, MagItems.Length - 1)], spawns[spawnPoint].transform.position, spawns[spawnPoint].transform.rotation).GetComponent<GunAmmo>().SetBullets(Random.Range(0, MaxBulletInMag));
             if (CanSpawnInSamePlace == false)
             {
                 GameObject tmp = spawns[spawns.Length - spawnsOffset];
