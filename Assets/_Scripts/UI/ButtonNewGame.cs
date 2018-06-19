@@ -13,6 +13,7 @@ public class ButtonNewGame : MonoBehaviour
 
     private void TaskOnClick()
     {
+        PlayerStats.IsDemo = false;
         PlayerStats.DaysSurvived = 0;
         PlayerStats.PlayerDead = false;
         PlayerStats.MaxEnergy = -1;
@@ -23,6 +24,6 @@ public class ButtonNewGame : MonoBehaviour
         PlayerStats.BulletsGun = 10;
         PlayerStats.Gun = true;
         PlayerStats.Melee = true;
-        SceneManager.LoadScene("ZurviveTest");
+        SceneManager.LoadScene("Map");
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public static class PlayerStats
 {
     private static int energy, maxEnergy, daysSurvived, bullets1, bullets2, bullets3, bulletsGun;
-    private static bool playerDead, melee, gun;
+    private static bool isDemo, playerDead, melee, gun;
 
     public static int Energy
     {
@@ -40,6 +40,18 @@ public static class PlayerStats
         set
         {
             daysSurvived = value;
+        }
+    }
+
+    public static bool IsDemo
+    {
+        get
+        {
+            return isDemo;
+        }
+        set
+        {
+            isDemo = value;
         }
     }
 

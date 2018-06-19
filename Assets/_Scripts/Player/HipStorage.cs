@@ -23,10 +23,7 @@ public class HipStorage : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-    }
 
-    private void Start()
-    {
         holsterRight = transform.Find("Holster Right").Find("Holster_SnapDropZone").GetComponent<VRTK_SnapDropZone>();
         holsterLeft = transform.Find("Holster Left").Find("Holster_SnapDropZone").GetComponent<VRTK_SnapDropZone>();
         holsterMiddleRight = transform.Find("Holster Middle Right").Find("Holster_SnapDropZone").GetComponent<VRTK_SnapDropZone>();
@@ -61,7 +58,7 @@ public class HipStorage : MonoBehaviour
 
     public void AttachGun(int bullets)
     {
-        GameObject gun = Instantiate(GunPrefab);
+        GameObject gun = Instantiate(GunPrefab, gameObject.transform.position, gameObject.transform.rotation);
         ZurviveGun script = gun.GetComponent<ZurviveGun>();
         if (bullets == -1)
             script.ToggleMag(false, 0);
@@ -72,7 +69,7 @@ public class HipStorage : MonoBehaviour
 
     public void AttachMelee()
     {
-        holsterLeft.ForceSnap(Instantiate(MeleePrefab));
+        holsterLeft.ForceSnap(Instantiate(MeleePrefab, gameObject.transform.position, gameObject.transform.rotation));
     }
 
     public void AttachAmmo1(int bullets)

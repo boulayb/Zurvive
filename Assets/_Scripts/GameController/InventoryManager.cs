@@ -19,7 +19,7 @@ public class InventoryManager : MonoBehaviour
     {
         LoadInventory();
     }
-    
+
     private void saveGun(ZurviveGun gun)
     {
         if (gun != null)

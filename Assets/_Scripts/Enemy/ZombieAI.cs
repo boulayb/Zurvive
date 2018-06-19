@@ -12,17 +12,21 @@ public class ZombieAI : MonoBehaviour
     public float chaseWaitTime = 5f;
     public float patrolWaitTime = 1f;
     public Transform[] patrolWayPoints;
+    public AudioClip[] IdleSounds;
 
+    private AudioSource sound;
     private ZombieSight zombieSight;
     private NavMeshAgent nav;
     private float chaseTimer;
     private float patrolTimer;
     private int wayPointIndex;
+    private bool playAudio = false;
 
     private void Awake()
     {
         zombieSight = GetComponent<ZombieSight>();
         nav = GetComponent<NavMeshAgent>();
+        sound = GetComponent<AudioSource>();
 
         wayPointIndex = 0;
         colID = 0;
@@ -38,6 +42,7 @@ public class ZombieAI : MonoBehaviour
 
     private void Update()
     {
+        playSoundIdle();
         if (zombieSight.personalLastSighting != zombieSight.resetPosition)
             Chassing();
         else
@@ -56,23 +61,11 @@ public class ZombieAI : MonoBehaviour
             colID--;
     }
 
-    private void SetRotationOnly(bool rotationOnly)
+    private void playSoundIdle()
     {
-        if (rotationOnly)
-        {
-            nav.updatePosition = false;
-            nav.angularSpeed = 999f;
-            nav.speed = 15f;
-            nav.acceleration = 20f;
-        }
-        else
-        {
-            nav.angularSpeed = 400f;
-            nav.speed = 3.5f;
-            nav.acceleration = 8f;
-            nav.Warp(transform.position);
-            nav.updatePosition = true;
-        }
+        if (playAudio && !sound.isPlaying)
+            sound.PlayOneShot(IdleSounds[Random.Range(0, IdleSounds.Length - 1)], 1.0f);
+        playAudio = !playAudio;
     }
 
     private void Chassing()

@@ -11,6 +11,11 @@ public class ZurviveGun : VRTK_InteractableObject
     public GameObject bulletPrefab;
     public GameObject ImpactEffectPrefab;
     public GameObject BloodEffectPrefab;
+    public AudioClip FireSound;
+    public AudioClip MagInSound;
+    public AudioClip MagOutSound;
+    public AudioClip FireEmptySound;
+    public AudioClip GunLoadedSound;
 
     public int Bullets = 10;
     public float Range = 100f;
@@ -30,6 +35,7 @@ public class ZurviveGun : VRTK_InteractableObject
     private Rigidbody slideRigidbody;
     private Collider slideCollider;
     private ParticleSystem muzzleFlash;
+    private AudioSource sound;
 
     private float minTriggerRotation = -10f;
     private float maxTriggerRotation = 45f;
@@ -50,6 +56,7 @@ public class ZurviveGun : VRTK_InteractableObject
         slideRigidbody = slide.GetComponent<Rigidbody>();
         slideCollider = slide.GetComponent<Collider>();
         muzzleFlash = barrelEnd.GetComponent<ParticleSystem>();
+        sound = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -116,6 +123,7 @@ public class ZurviveGun : VRTK_InteractableObject
             magSpot.SetActive(false);
             Instantiate(MagPrefab, magSpot.transform.position - new Vector3(0, 0.1f, 0), magSpot.transform.rotation).GetComponent<GunAmmo>().SetBullets(Bullets);
             ToggleMag(false, 0);
+            sound.PlayOneShot(MagOutSound, 1.0f);
         }
     }
 
@@ -134,6 +142,7 @@ public class ZurviveGun : VRTK_InteractableObject
             muzzleFlash.Play();
             VRTK_ControllerHaptics.TriggerHapticPulse(VRTK_ControllerReference.GetControllerReference(controllerEvents.gameObject), 0.63f, 0.2f, 0.01f);
             slide.Fire();
+            sound.PlayOneShot(FireSound, 1.0f);
             RaycastHit hit;
             if (Physics.Raycast(barrelEnd.transform.position, barrelEnd.transform.forward, out hit, Range, -1, QueryTriggerInteraction.Ignore))
             {
@@ -171,6 +180,8 @@ public class ZurviveGun : VRTK_InteractableObject
                 bullet.SetActive(false);
             }
         }
+        else
+            sound.PlayOneShot(FireEmptySound, 1.0f);
     }
 
     public override void StopUsing(VRTK_InteractUse previousUsingObject = null, bool resetUsingObjectState = true)
@@ -193,6 +204,7 @@ public class ZurviveGun : VRTK_InteractableObject
             racked = false;
             loaded = false;
         }
+        sound.PlayOneShot(GunLoadedSound, 1.0f);
     }
 
     public void ToggleMag(bool status, int bullets)
@@ -232,6 +244,7 @@ public class ZurviveGun : VRTK_InteractableObject
         {
             ToggleMag(true, other.transform.parent.gameObject.GetComponent<GunAmmo>().Bullets);
             Destroy(other.transform.parent.gameObject);
+            sound.PlayOneShot(MagInSound, 1.0f);
         }
     }
 }

@@ -21,9 +21,7 @@ public class ZombieHit : MonoBehaviour
         {
             anim.SetBool(HashID.instance.zombieIsHit, zombieIsHit);
             if (anim.GetCurrentAnimatorStateInfo(2).IsName("Zombie Reaction Hit"))
-            {
                 zombieIsHit = false;
-            }
         }
     }
 }

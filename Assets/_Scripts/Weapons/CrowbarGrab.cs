@@ -6,13 +6,22 @@ public class CrowbarGrab : VRTK_InteractableObject
 {
     [Header("Crowbar")]
     public int EnergyLostDivider = 30;
+    public int MinForceForSound = 300;
     public GameObject BloodEffectPrefab;
+    public AudioClip ImpactSound;
 
+    private AudioSource sound;
     private float impactMagnifier = 120f;
     private float collisionForce = 0f;
     private float maxCollisionForce = 4000f;
     private VRTK_ControllerReference controllerReference;
     private bool waiting = false;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        sound = GetComponent<AudioSource>();
+    }
 
     public float CollisionForce()
     {
@@ -54,11 +63,17 @@ public class CrowbarGrab : VRTK_InteractableObject
                 Destroy(impact, 1.1f);
                 StartCoroutine(WaitTime(1));
             }
+            else if (waiting == false && collisionForce >= MinForceForSound)
+            {
+                waiting = true;
+                sound.PlayOneShot(ImpactSound, 1.0f);
+                StartCoroutine(WaitTime(1));
+            }
         }
         else
         {
             collisionForce = collision.relativeVelocity.magnitude * impactMagnifier;
-        }
+        }            
     }
 
     private IEnumerator WaitTime(float timeToWait)

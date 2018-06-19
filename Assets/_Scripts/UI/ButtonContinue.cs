@@ -20,6 +20,9 @@ public class ButtonContinue : MonoBehaviour
 
     private void TaskOnClick()
     {
-        SceneManager.LoadScene("ZurviveTest");
+        if (PlayerStats.IsDemo == true)
+            SceneManager.LoadScene("ZurviveTest");
+        else
+            SceneManager.LoadScene("Map");
     }
 }

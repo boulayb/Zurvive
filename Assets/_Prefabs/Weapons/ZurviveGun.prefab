@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 114477461769929668}
   - component: {fileID: 114970448646802884}
   - component: {fileID: 114643565255763052}
+  - component: {fileID: 82953373196863228}
   m_Layer: 9
   m_Name: ZurviveGun
   m_TagString: Gun
@@ -980,6 +981,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82953373196863228
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1384421221439078}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95438145974648998
 Animator:
   serializedVersion: 3
@@ -1186,12 +1267,15 @@ MonoBehaviour:
     type: 2}
   bulletPrefab: {fileID: 1093002769344350, guid: 7b0ea6087960c0e47a27b75ff1caeb79,
     type: 2}
-  EmptyMagPrefab: {fileID: 1577174024164234, guid: 8d87a44b1b804594394a5bc2113953d8,
-    type: 2}
   ImpactEffectPrefab: {fileID: 1493584408618742, guid: 64852b8482cfd1b4c84dc3d5ee34aa73,
     type: 2}
   BloodEffectPrefab: {fileID: 1513117889259968, guid: b87f98cb8929d514fbb3abe5f9dd8c64,
     type: 2}
+  FireSound: {fileID: 8300000, guid: aa65fe2329b7fe844857ecf4452a3c81, type: 3}
+  MagInSound: {fileID: 8300000, guid: 0644b08886b045546b29476adef49a95, type: 3}
+  MagOutSound: {fileID: 8300000, guid: 7cdf891ebc6e0a44696929d9c0ec0e34, type: 3}
+  FireEmptySound: {fileID: 8300000, guid: 22c60c9128db53a468c9f0bbb87c1970, type: 3}
+  GunLoadedSound: {fileID: 8300000, guid: 80c64d3525a99684aa03598d1a3a5d0c, type: 3}
   Bullets: 10
   Range: 100
   HasMag: 1

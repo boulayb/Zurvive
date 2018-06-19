@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114116920035053186}
   - component: {fileID: 114103027883157360}
   - component: {fileID: 114989114324108660}
+  - component: {fileID: 82006557376704346}
   m_Layer: 9
   m_Name: ZurviveCrowbar
   m_TagString: Crowbar
@@ -285,6 +286,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.050612263, y: 0.02300632, z: 0.01547103}
   m_Center: {x: -0.48093864, y: -0.4872195, z: -0.4144338}
+--- !u!82 &82006557376704346
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1125648579495420}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114103027883157360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,6 +410,10 @@ MonoBehaviour:
   touchHighlightColor: {r: 0, g: 0, b: 0, a: 0}
   usingState: 0
   EnergyLostDivider: 30
+  MinForceForSound: 100
+  BloodEffectPrefab: {fileID: 1513117889259968, guid: b87f98cb8929d514fbb3abe5f9dd8c64,
+    type: 2}
+  ImpactSound: {fileID: 8300000, guid: ffd48df2ea40f2f4a96978b6bb5b6eb2, type: 3}
 --- !u!114 &114989114324108660
 MonoBehaviour:
   m_ObjectHideFlags: 1

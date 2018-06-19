@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/ZurviveTest.unity
     guid: 01f6650dd61f4f74ba3dad90e259d0de
+  - enabled: 1
+    path: Assets/_Scenes/Map.unity
+    guid: eee5be76e5ac32641ac8bd31c94bc3b2
