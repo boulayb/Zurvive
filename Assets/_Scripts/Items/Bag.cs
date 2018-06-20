@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Bag : MonoBehaviour
 {
+    public AudioClip BagInSound;
+
+    private AudioSource sound;
+
+    private void Awake()
+    {
+        sound = GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == Tags.food)
@@ -13,6 +22,7 @@ public class Bag : MonoBehaviour
                 Destroy(other.transform.parent.gameObject);
             else
                 Destroy(other.gameObject);
+            sound.PlayOneShot(BagInSound, 1.0f);
         }
     }
 }
