@@ -1833,7 +1833,6 @@ MonoBehaviour:
   forceToKill: 850
   forceToPush: 150
   parentZombie: {fileID: 1275271943060122}
-  HitSound: {fileID: 8300000, guid: e414d98d382a8be4abfa424bfd53c9ef, type: 3}
 --- !u!114 &114641510056888548
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1884,7 +1883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfViewAngle: 140
-  maxSpeedNoise: 1.5
+  maxSpeedNoise: 2
   playerInSight: 0
   personalLastSighting: {x: 0, y: 0, z: 0}
   resetPosition: {x: 5000, y: 5000, z: 5000}
@@ -1913,7 +1912,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombieIsHit: 0
-  HitSound: {fileID: 8300000, guid: e414d98d382a8be4abfa424bfd53c9ef, type: 3}
 --- !u!114 &114845817440723510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1975,7 +1973,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 15
   m_Center: {x: 0, y: 1, z: 0}
 --- !u!136 &136465443291195476
 CapsuleCollider:
