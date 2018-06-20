@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance = null;
 
     private Vector3 lastPosition;
+    private CapsuleCollider col;
     private float speed;
 
     private void Awake()
@@ -22,12 +23,24 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
 
         lastPosition = transform.position;
+
+        col = GetComponent<CapsuleCollider>();
     }
 
     private void FixedUpdate()
     {
         speed = Vector3.Distance(lastPosition, transform.position) / Time.deltaTime;
         lastPosition = transform.position;
+    }
+
+    public float getHeight()
+    {
+        return col.height;
+    }
+
+    public CapsuleCollider getCollider()
+    {
+        return col;
     }
 
     public float getSpeed()

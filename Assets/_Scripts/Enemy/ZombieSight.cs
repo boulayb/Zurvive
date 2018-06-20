@@ -15,6 +15,7 @@ public class ZombieSight : MonoBehaviour
     private SphereCollider col;
     private Animator anim;
     private ZombieAI zombieAI;
+    private Vector3 viewOffset = new Vector3(0, 1.6f, 0.5f);
 
     private void Awake()
     {
@@ -44,23 +45,30 @@ public class ZombieSight : MonoBehaviour
         {
             playerInSight = false;
 
-            Vector3 direction = other.transform.position - transform.position;
+            CapsuleCollider playerCol = PlayerController.instance.getCollider();
+            Transform box = playerCol.transform.parent;
+            Quaternion quat = Quaternion.identity;
+            quat.SetLookRotation(box.forward, Vector3.Cross(box.forward, box.right));
+            Vector3 direction = ((other.transform.position + (quat * playerCol.center)) - transform.position) - (other.transform.up * (2f - playerCol.center.y));
             float angle = Vector3.Angle(direction, transform.forward);
 
             if (angle < fieldOfViewAngle * 0.5f)
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast(transform.position + transform.up, direction.normalized, out hit, col.radius))
-                    if (hit.collider.gameObject == PlayerController.instance.gameObject)
+                if (Physics.Raycast(transform.position + viewOffset, direction.normalized, out hit, col.radius))
+                {
+                    if (hit.collider.gameObject == PlayerController.instance.gameObject || hit.collider.gameObject.tag == Tags.player)
                     {
                         playerInSight = true;
                         personalLastSighting = PlayerController.instance.gameObject.transform.position;
                     }
+                }
+
             }
 
             if (playerInSight == false && PlayerController.instance.getSpeed() > maxSpeedNoise)
-                if (CalculatePathLength(PlayerController.instance.gameObject.transform.position) <= col.radius)
+               if (CalculatePathLength(PlayerController.instance.gameObject.transform.position) <= col.radius)
                     personalLastSighting = PlayerController.instance.gameObject.transform.position;
         }
     }
