@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance = null;
+    public float MaxSpeedNoise = 1.8f;
 
+    private AudioSource sound;
     private Vector3 lastPosition;
     private CapsuleCollider col;
     private float speed;
@@ -25,6 +27,21 @@ public class PlayerController : MonoBehaviour
         lastPosition = transform.position;
 
         col = GetComponent<CapsuleCollider>();
+        sound = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        if (speed >= MaxSpeedNoise && sound.isPlaying == false)
+        {
+            if (speed >= 2.1f)
+                sound.pitch = 3f;
+            else
+                sound.pitch = 2f;
+            sound.Play();
+        }
+        else if (sound.isPlaying == false)
+            sound.Stop();
     }
 
     private void FixedUpdate()

@@ -78001,6 +78001,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 82002219487495838, guid: 569e629589885254d84ea1b65e4636b2,
+        type: 2}
+      propertyPath: m_Pitch
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 569e629589885254d84ea1b65e4636b2, type: 2}
   m_IsPrefabParent: 0
@@ -81829,6 +81834,7 @@ GameObject:
   - component: {fileID: 1693747175}
   - component: {fileID: 1693747177}
   - component: {fileID: 1693747176}
+  - component: {fileID: 1693747178}
   m_Layer: 8
   m_Name: ZurvivePlayerCollider
   m_TagString: Player
@@ -81860,6 +81866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f561cacf690680642ac39038f8fa7812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxSpeedNoise: 1.8
 --- !u!136 &1693747177
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -81873,6 +81880,86 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &1693747178
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1693747174}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ecb5ef299f71501468520d932699259b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 10
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &1694359259 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 0c7140fcf769fb041b91ac72ed7ee2db, type: 3}
@@ -97914,10 +98001,10 @@ Transform:
   - {fileID: 563676305}
   - {fileID: 663553419}
   - {fileID: 1454188012}
-  - {fileID: 474772321}
   - {fileID: 1658285576}
-  - {fileID: 886006499}
+  - {fileID: 474772321}
   - {fileID: 696131483}
+  - {fileID: 886006499}
   - {fileID: 2108130409}
   - {fileID: 983889268}
   - {fileID: 1390258415}

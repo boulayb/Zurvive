@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class ZombieSight : MonoBehaviour
 {
     public float fieldOfViewAngle = 110f;
-    public float maxSpeedNoise = 3f;
     public bool playerInSight;
     public Vector3 personalLastSighting;
     public Vector3 resetPosition = new Vector3(5000f, 5000f, 5000f);
@@ -56,7 +55,8 @@ public class ZombieSight : MonoBehaviour
             {
                 RaycastHit hit;
 
-                if (Physics.Raycast(transform.position + viewOffset, direction.normalized, out hit, col.radius))
+                quat.SetLookRotation(transform.forward, Vector3.Cross(transform.forward, transform.right));
+                if (Physics.Raycast(transform.position + (quat * viewOffset), direction.normalized, out hit, col.radius))
                 {
                     if (hit.collider.gameObject == PlayerController.instance.gameObject || hit.collider.gameObject.tag == Tags.player)
                     {
@@ -67,7 +67,7 @@ public class ZombieSight : MonoBehaviour
 
             }
 
-            if (playerInSight == false && PlayerController.instance.getSpeed() > maxSpeedNoise)
+            if (playerInSight == false && PlayerController.instance.getSpeed() > PlayerController.instance.MaxSpeedNoise)
                if (CalculatePathLength(PlayerController.instance.gameObject.transform.position) <= col.radius)
                     personalLastSighting = PlayerController.instance.gameObject.transform.position;
         }
