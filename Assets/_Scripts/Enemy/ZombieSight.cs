@@ -45,21 +45,25 @@ public class ZombieSight : MonoBehaviour
             playerInSight = false;
 
             CapsuleCollider playerCol = PlayerController.instance.getCollider();
-            Transform box = playerCol.transform.parent;
-            Quaternion quat = Quaternion.identity;
-            quat.SetLookRotation(box.forward, Vector3.Cross(box.forward, box.right));
-            Vector3 direction = ((other.transform.position + (quat * playerCol.center)) - transform.position) - (other.transform.up * (2f - playerCol.center.y));
+            Transform playerBox = playerCol.transform.parent;
+            Quaternion playerQuat = Quaternion.identity;
+            Quaternion selfQuat = Quaternion.identity;
+            playerQuat.SetLookRotation(playerBox.forward, Vector3.Cross(playerBox.forward, playerBox.right));
+            selfQuat.SetLookRotation(transform.forward, Vector3.Cross(transform.forward, transform.right));
+            Vector3 direction = ((other.transform.position + (playerQuat * playerCol.center)) - (transform.position + (selfQuat * new Vector3(0f, 0f, viewOffset.z)))) - (other.transform.up * (2f - playerCol.center.y));
             float angle = Vector3.Angle(direction, transform.forward);
 
             if (angle < fieldOfViewAngle * 0.5f)
             {
                 RaycastHit hit;
 
-                quat.SetLookRotation(transform.forward, Vector3.Cross(transform.forward, transform.right));
-                if (Physics.Raycast(transform.position + (quat * viewOffset), direction.normalized, out hit, col.radius))
+                //Debug.DrawRay(transform.position + (quat2 * viewOffset), direction, Color.red);
+                if (Physics.Raycast(transform.position + (selfQuat * viewOffset), direction.normalized, out hit, col.radius))
                 {
+                    //Debug.Log("obj = " + hit.collider.gameObject);
                     if (hit.collider.gameObject == PlayerController.instance.gameObject || hit.collider.gameObject.tag == Tags.player)
                     {
+                        //Debug.Log("PLAYER");
                         playerInSight = true;
                         personalLastSighting = PlayerController.instance.gameObject.transform.position;
                     }
