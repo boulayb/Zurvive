@@ -9,7 +9,6 @@ public class ZombieHit : MonoBehaviour
     private Animator anim;
     private ZombieAI zombieAI;
     private ZombieSight zombieSight;
-    private bool wait = false;
 
     private void Awake()
     {
@@ -23,6 +22,8 @@ public class ZombieHit : MonoBehaviour
         if (zombieAI)
         {
             anim.SetBool(HashID.instance.zombieIsHit, zombieIsHit);
+            if (zombieIsHit == true)
+                zombieSight.personalLastSighting = PlayerController.instance.gameObject.transform.position;
             zombieIsHit = false;
         }
     }
