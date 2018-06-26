@@ -57,7 +57,7 @@ public class ZombieSight : MonoBehaviour
             {
                 RaycastHit hit;
 
-                //Debug.DrawRay(transform.position + (quat2 * viewOffset), direction, Color.red);
+                //Debug.DrawRay(transform.position + (selfQuat * viewOffset), direction, Color.red);
                 if (Physics.Raycast(transform.position + (selfQuat * viewOffset), direction.normalized, out hit, col.radius))
                 {
                     //Debug.Log("obj = " + hit.collider.gameObject);
