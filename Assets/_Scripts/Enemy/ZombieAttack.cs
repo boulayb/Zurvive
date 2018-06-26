@@ -23,7 +23,7 @@ public class ZombieAttack : MonoBehaviour
         anim.SetBool(HashID.instance.playerInRangeBool, playerInRange);
         float attack = anim.GetFloat(HashID.instance.attackFloat);
 
-        if (attack > 0.4 && playerInRange)
+        if (attack > 0.1 && playerInRange)
         {
             PlayerStats.Energy = EnergyManager.instance.GetEnergy();
             PlayerStats.PlayerDead = true;
