@@ -64,6 +64,6 @@ public class ZombieDeath : MonoBehaviour
         Destroy(parentZombie.GetComponent<Rigidbody>());
         SetKinematic(false);
         SetLayer("Dead");
-        //rb.AddForce(dir * (force));
+        rb.AddForce(dir * (force * 2));
     }
 }
