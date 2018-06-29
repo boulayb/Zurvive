@@ -1,7 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EnergyManager : MonoBehaviour
 {
@@ -48,8 +46,7 @@ public class EnergyManager : MonoBehaviour
                 energy -= energyLostWalking;
             if (energy <= 0)
             {
-                PlayerStats.Energy = energy;
-                SceneManager.LoadScene("MenuNextDay");
+                PlayerController.instance.Die(false);
             }
             StartCoroutine(WaitTime(1));
         }

@@ -37,7 +37,7 @@ public class ZombieAI : MonoBehaviour
         GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
 
         if (isDead == true)
-            GetComponentInChildren<ZombieDeath>().Die();
+            GetComponentInChildren<ZombieDeath>().Die(new Vector3(0, 0, 0), 0f, GetComponent<Rigidbody>());
     }
 
     private void Update()

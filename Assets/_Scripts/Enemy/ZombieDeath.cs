@@ -22,16 +22,11 @@ public class ZombieDeath : MonoBehaviour
     {
         if (zombieAI)
         {
-            if (collision.gameObject.tag == Tags.crowbar &&
-                collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToKill)
-            {
-                Die();
-            }
-            else if (collision.gameObject.tag == Tags.crowbar &&
-                collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce() >= forceToPush)
-            {
+            float force = collision.gameObject.GetComponent<CrowbarGrab>().CollisionForce();
+            if (collision.gameObject.tag == Tags.crowbar && force >= forceToKill)
+                Die(-(collision.contacts[0].point - parentZombie.transform.position).normalized, force, collision.rigidbody);
+            else if (collision.gameObject.tag == Tags.crowbar && force >= forceToPush)
                 zombieHit.zombieIsHit = true;
-            }
         }
     }
 
@@ -54,10 +49,9 @@ public class ZombieDeath : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void Die(Vector3 dir, float force, Rigidbody rb)
     {
         zombieAI.isDead = true;
-        Destroy(parentZombie.GetComponent<Rigidbody>());
         Destroy(parentZombie.GetComponent<Animator>());
         Destroy(parentZombie.GetComponent<NavMeshAgent>());
         Destroy(parentZombie.GetComponent<SphereCollider>());
@@ -67,7 +61,9 @@ public class ZombieDeath : MonoBehaviour
         Destroy(parentZombie.GetComponent<ZombieAttack>());
         Destroy(parentZombie.GetComponent<ZombieHit>());
         Destroy(parentZombie.GetComponent<ZombieSight>());
+        Destroy(parentZombie.GetComponent<Rigidbody>());
         SetKinematic(false);
         SetLayer("Dead");
+        //rb.AddForce(dir * (force));
     }
 }

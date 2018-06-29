@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class ZombieAttack : MonoBehaviour
 {
@@ -25,9 +22,7 @@ public class ZombieAttack : MonoBehaviour
 
         if (attack > 0.1 && playerInRange)
         {
-            PlayerStats.Energy = EnergyManager.instance.GetEnergy();
-            PlayerStats.PlayerDead = true;
-            SceneManager.LoadScene("MenuNextDay");
+            PlayerController.instance.Die(true);
         }
     }
     private void OnTriggerStay(Collider other)

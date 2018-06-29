@@ -150,7 +150,7 @@ public class ZurviveGun : VRTK_InteractableObject
                 {
                     GameObject impact = Instantiate(BloodEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
                     Destroy(impact, 1.1f);
-                    hit.transform.gameObject.GetComponent<ZombieDeath>().Die();
+                    hit.transform.gameObject.GetComponent<ZombieDeath>().Die(-(hit.point - hit.transform.position).normalized, 1000f, hit.rigidbody);
                 }
                 else if (hit.transform.tag == Tags.body)
                 {

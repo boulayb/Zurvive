@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class ZurviveTimer : MonoBehaviour
 {
@@ -27,8 +24,6 @@ public class ZurviveTimer : MonoBehaviour
 
     private void EndOfTime()
     {
-        PlayerStats.Energy = EnergyManager.instance.GetEnergy();
-        PlayerStats.PlayerDead = true;
-        SceneManager.LoadScene("MenuNextDay");
+        PlayerController.instance.Die(true);
     }
 }

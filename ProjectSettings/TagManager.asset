@@ -21,6 +21,7 @@ TagManager:
   - Sound
   - MagSpawn
   - BulletSpawn
+  - PlayArea
   layers:
   - Default
   - TransparentFX
