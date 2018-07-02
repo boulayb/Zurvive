@@ -45,7 +45,7 @@ public class ZombieAnimation : MonoBehaviour
         float speed;
         float angle;
 
-        if (zombieAttack.playerInRange)
+        if (PlayerController.instance != null && Vector3.Distance(PlayerController.instance.gameObject.transform.position, transform.position) <= 1)
         {
             speed = 0f;
             angle = FindAngle(transform.forward, PlayerController.instance.gameObject.transform.position - transform.position, transform.up);
